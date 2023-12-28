@@ -30,10 +30,22 @@ class AuthCoordinator: Coordinator {
     }
     
     func goToLoginPage() {
-        let loginController = AuthController()
-        let loginViewModel = AuthViewModel()
+        let loginController = LoginController()
+        let loginViewModel = LoginViewModel()
         loginViewModel.coordinator = self
         loginController.viewModel = loginViewModel
         navigationController.pushViewController(loginController, animated: false)
+    }
+    
+    func goToRegisterPage() {
+        let registerController = RegisterController()
+        let registerViewModel = RegisterViewModel()
+        registerViewModel.coordinator = self
+        registerController.viewModel = registerViewModel
+        navigationController.pushViewController(registerController, animated: true)
+    }
+    
+    func dismiss() {
+        navigationController.popViewController(animated: true)
     }
 }

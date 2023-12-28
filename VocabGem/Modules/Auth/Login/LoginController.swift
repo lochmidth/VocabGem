@@ -7,10 +7,10 @@
 
 import UIKit
 
-class AuthController: UIViewController {
+class LoginController: UIViewController {
     //MARK: - Properties
     
-    var viewModel: AuthViewModel?
+    var viewModel: LoginViewModel?
     
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
@@ -51,7 +51,7 @@ class AuthController: UIViewController {
     
     private lazy var dontHaveAccountButton: UIButton = {
         let button = Utilities().attributedButton("Don't have an account?", "Sign Up")
-        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleShowRegister), for: .touchUpInside)
         return button
     }()
     
@@ -77,12 +77,15 @@ class AuthController: UIViewController {
     
     //MARK: - Actions
     
-    @objc func handleShowSignUp() {
-        print("DEBUG: Handle Go To Register")
+    @objc func handleShowRegister() {
+        viewModel?.handleShowRegister()
     }
     
     @objc func handleLogin() {
-        print("DEBUG: Handle Login")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        viewModel?.handleLogin(email: email, password: password)
     }
     
     @objc func handleLoginWithApple() {
@@ -97,22 +100,29 @@ class AuthController: UIViewController {
         view.addSubview(logoImageView)
         logoImageView.center(inView: view, yConstant: -200)
         
-        let stack = UIStackView(arrangedSubviews: [emailContainerText, passwordContainerText, loginButton, dontHaveAccountButton])
+        let stack = UIStackView(arrangedSubviews: [emailContainerText, passwordContainerText, loginButton])
         stack.axis = .vertical
-        stack.spacing = 8
+        stack.spacing = 24
         
         view.addSubview(stack)
-        stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 32, paddingRight: 32)
+        stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+                     paddingTop: 8, paddingLeft: 32, paddingRight: 32)
         
         let divider = UIView()
         divider.backgroundColor = .mutedTaupe
         divider.setHeight(0.75)
         
         view.addSubview(divider)
-        divider.anchor(top: stack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 36, paddingLeft: 16, paddingRight: 16)
+        divider.anchor(top: stack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+                       paddingTop: 36, paddingLeft: 16, paddingRight: 16)
         
         view.addSubview(loginWithAppleButton)
-        loginWithAppleButton.anchor(top: divider.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 36, paddingLeft: 32, paddingRight: 32)
+        loginWithAppleButton.anchor(top: divider.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+                                    paddingTop: 36, paddingLeft: 32, paddingRight: 32)
+        
+        view.addSubview(dontHaveAccountButton)
+        dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                                     paddingLeft: 40, paddingRight: 40)
         
     }
 }

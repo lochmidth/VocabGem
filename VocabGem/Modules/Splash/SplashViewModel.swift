@@ -10,4 +10,7 @@ import Foundation
 class SplashViewModel {
     var coordinator: AuthCoordinator?
     
+    func checkForAuth() {
+        coordinator?.goToLoginPage()
+    }
 }

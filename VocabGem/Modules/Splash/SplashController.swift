@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SplashController: UIViewController {
     //MARK: - Properties
@@ -45,6 +46,11 @@ class SplashController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("DEBUG: Error while signOut, \(error.localizedDescription)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,7 +72,7 @@ class SplashController: UIViewController {
         UIView.animate(withDuration: 3.0) {
             self.stack.alpha = 1
         } completion: { [weak self] _ in
-            print("DEBUG: Handle checkAuth")
+            self?.viewModel?.checkForAuth()
         }
     }
 }
