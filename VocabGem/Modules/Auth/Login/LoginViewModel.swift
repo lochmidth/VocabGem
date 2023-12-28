@@ -24,6 +24,9 @@ class LoginViewModel {
         Task {
             do {
                 try await authService.login(withEmail: email, password: password)
+                DispatchQueue.main.async {
+                    self.coordinator?.didFinishAuth()
+                }
             } catch {
                 print("DEBUG: Error while logging in, \(error.localizedDescription)")
             }

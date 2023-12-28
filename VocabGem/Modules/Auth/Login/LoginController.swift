@@ -75,6 +75,10 @@ class LoginController: UIViewController {
         configureUI()
     }
     
+    deinit {
+        print("DEBUG: \(self) deallocated.")
+    }
+    
     //MARK: - Actions
     
     @objc func handleShowRegister() {
