@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol Coordinator: AnyObject {
     var navigationController : UINavigationController { get set }
@@ -21,11 +22,29 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-       goToAuth()
+        
+//        do {
+//            try Auth.auth().signOut()
+//        } catch {
+//            print("DEBUG: Error while signOut, \(error.localizedDescription)")
+//        }
+        
+        if Auth.auth().currentUser == nil {
+            goToAuth()
+        } else {
+            goToHome()
+        }
     }
     
     private func goToAuth() {
         let child = AuthCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func goToHome() {
+        let child = TabBarCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()

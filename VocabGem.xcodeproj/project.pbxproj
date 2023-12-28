@@ -11,6 +11,9 @@
 		C248FAE82B3C6AA100AD7244 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C248FAE72B3C6AA100AD7244 /* GoogleService-Info.plist */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
 		C248FAEC2B3DD80D00AD7244 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAEB2B3DD80D00AD7244 /* UserService.swift */; };
+		C248FAEE2B3E1B0B00AD7244 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */; };
+		C248FAF32B3E25F400AD7244 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF22B3E25F400AD7244 /* HomeController.swift */; };
+		C248FAF52B3E25FC00AD7244 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF42B3E25FC00AD7244 /* QuizController.swift */; };
 		C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554582B3C3A6D003B083B /* AppDelegate.swift */; };
 		C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265545A2B3C3A6D003B083B /* SceneDelegate.swift */; };
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
@@ -21,8 +24,6 @@
 		C265547F2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265547E2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift */; };
 		C26554952B3C3B1C003B083B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554942B3C3B1C003B083B /* Extensions.swift */; };
 		C26554972B3C3B9B003B083B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554962B3C3B9B003B083B /* AppCoordinator.swift */; };
-		C265549A2B3C3D6B003B083B /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554992B3C3D6B003B083B /* SplashController.swift */; };
-		C265549C2B3C432D003B083B /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265549B2B3C432D003B083B /* SplashViewModel.swift */; };
 		C265549E2B3C445F003B083B /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265549D2B3C445F003B083B /* AuthCoordinator.swift */; };
 		C26554A12B3C4716003B083B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554A02B3C4716003B083B /* LoginController.swift */; };
 		C26554A32B3C471D003B083B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554A22B3C471D003B083B /* LoginViewModel.swift */; };
@@ -33,7 +34,6 @@
 		C26554B02B3C4E86003B083B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554AF2B3C4E86003B083B /* Utilities.swift */; };
 		C26554B42B3C5CD4003B083B /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554B32B3C5CD4003B083B /* RegisterController.swift */; };
 		C26554B62B3C5CDB003B083B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554B52B3C5CDB003B083B /* RegisterViewModel.swift */; };
-		C26554B92B3C625B003B083B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554B82B3C625B003B083B /* TabBarController.swift */; };
 		C26554BB2B3C6357003B083B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554BA2B3C6357003B083B /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +59,9 @@
 		C248FAE72B3C6AA100AD7244 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C248FAE92B3DD75D00AD7244 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C248FAEB2B3DD80D00AD7244 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		C248FAF22B3E25F400AD7244 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		C248FAF42B3E25FC00AD7244 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		C26554552B3C3A6D003B083B /* VocabGem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabGem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26554582B3C3A6D003B083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C265545A2B3C3A6D003B083B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,15 +76,12 @@
 		C265547E2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C26554942B3C3B1C003B083B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C26554962B3C3B9B003B083B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		C26554992B3C3D6B003B083B /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
-		C265549B2B3C432D003B083B /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		C265549D2B3C445F003B083B /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		C26554A02B3C4716003B083B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C26554A22B3C471D003B083B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C26554AF2B3C4E86003B083B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C26554B32B3C5CD4003B083B /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		C26554B52B3C5CDB003B083B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		C26554B82B3C625B003B083B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C26554BA2B3C6357003B083B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +114,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C248FAEF2B3E25B800AD7244 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C248FAF22B3E25F400AD7244 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C248FAF02B3E25C900AD7244 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		C248FAF12B3E25CC00AD7244 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				C248FAF42B3E25FC00AD7244 /* QuizController.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		C265544C2B3C3A6D003B083B = {
 			isa = PBXGroup;
 			children = (
@@ -193,9 +216,8 @@
 		C26554902B3C3AD5003B083B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C26554982B3C3D60003B083B /* Splash */,
 				C265549F2B3C46E2003B083B /* Auth */,
-				C26554B72B3C623C003B083B /* Home */,
+				C26554B72B3C623C003B083B /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -205,6 +227,7 @@
 			children = (
 				C26554962B3C3B9B003B083B /* AppCoordinator.swift */,
 				C265549D2B3C445F003B083B /* AuthCoordinator.swift */,
+				C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -222,15 +245,6 @@
 				C248FAE92B3DD75D00AD7244 /* User.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		C26554982B3C3D60003B083B /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				C26554992B3C3D6B003B083B /* SplashController.swift */,
-				C265549B2B3C432D003B083B /* SplashViewModel.swift */,
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		C265549F2B3C46E2003B083B /* Auth */ = {
@@ -260,12 +274,14 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		C26554B72B3C623C003B083B /* Home */ = {
+		C26554B72B3C623C003B083B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C26554B82B3C625B003B083B /* TabBarController.swift */,
+				C248FAEF2B3E25B800AD7244 /* Home */,
+				C248FAF12B3E25CC00AD7244 /* Quiz */,
+				C248FAF02B3E25C900AD7244 /* Word */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,8 +429,6 @@
 				C248FAEC2B3DD80D00AD7244 /* UserService.swift in Sources */,
 				C26554B02B3C4E86003B083B /* Utilities.swift in Sources */,
 				C26554952B3C3B1C003B083B /* Extensions.swift in Sources */,
-				C265549A2B3C3D6B003B083B /* SplashController.swift in Sources */,
-				C265549C2B3C432D003B083B /* SplashViewModel.swift in Sources */,
 				C26554A12B3C4716003B083B /* LoginController.swift in Sources */,
 				C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */,
 				C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */,
@@ -422,10 +436,12 @@
 				C26554B62B3C5CDB003B083B /* RegisterViewModel.swift in Sources */,
 				C26554B42B3C5CD4003B083B /* RegisterController.swift in Sources */,
 				C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */,
-				C26554B92B3C625B003B083B /* TabBarController.swift in Sources */,
 				C26554BB2B3C6357003B083B /* AuthService.swift in Sources */,
+				C248FAF32B3E25F400AD7244 /* HomeController.swift in Sources */,
+				C248FAF52B3E25FC00AD7244 /* QuizController.swift in Sources */,
 				C265549E2B3C445F003B083B /* AuthCoordinator.swift in Sources */,
 				C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */,
+				C248FAEE2B3E1B0B00AD7244 /* TabBarCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

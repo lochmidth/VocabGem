@@ -69,6 +69,10 @@ class RegisterController: UIViewController {
         configureUI()
     }
     
+    deinit {
+        print("DEBUG: \(self) deallocated.")
+    }
+    
     //MARK: - Actions
     
     @objc func handleRegister() {
