@@ -13,6 +13,8 @@ class HomeController: UIViewController {
     
     //MARK: - Properties
     
+    var searchTimer: Timer?
+    
     var viewModel: homeViewModel
     
     private let appLabel: UILabel = {
@@ -73,6 +75,7 @@ class HomeController: UIViewController {
         
         configureUI()
         configureTableView()
+        configureSearchBar()
     }
     
     init(viewModel: homeViewModel) {
@@ -132,27 +135,55 @@ class HomeController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
+    
+    private func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.returnKeyType = .done
+    }
+}
+
+//MARK: - UISearchBarDelegate
+
+extension HomeController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTimer?.invalidate()
+        
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+            self?.viewModel.searchWords(letterPattern: searchText)
+            self?.tableView.reloadData()
+        })
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        tableView.reloadData()
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 //MARK: - UITableViewDataSoruce/Delegate
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Recent Words"
+        return "Search Results"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.words?.results.data.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = "Flower"
+        cell.textLabel?.text = viewModel.words?.results.data[indexPath.item]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("DEBUG: Did select \(indexPath.row). word")
+        guard let word = viewModel.words?.results.data[indexPath.item] else { return }
+        viewModel.getWordDetails(word: word)
     }
     
 }

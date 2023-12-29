@@ -16,7 +16,6 @@
 		C248FAF52B3E25FC00AD7244 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF42B3E25FC00AD7244 /* QuizController.swift */; };
 		C248FAF72B3EE32200AD7244 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF62B3EE32200AD7244 /* WordController.swift */; };
 		C248FAF92B3EE3B400AD7244 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF82B3EE3B400AD7244 /* HomeViewModel.swift */; };
-		C248FAFC2B3EE8A700AD7244 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C248FAFB2B3EE8A700AD7244 /* Alamofire */; };
 		C248FAFE2B3EF09000AD7244 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAFD2B3EF09000AD7244 /* QuizViewModel.swift */; };
 		C248FB002B3EF09700AD7244 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAFF2B3EF09700AD7244 /* WordViewModel.swift */; };
 		C248FB022B3EF5A300AD7244 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB012B3EF5A300AD7244 /* TabBarController.swift */; };
@@ -24,6 +23,11 @@
 		C248FB092B3F159600AD7244 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB082B3F159600AD7244 /* SplashController.swift */; };
 		C248FB0B2B3F15B100AD7244 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB0A2B3F15B100AD7244 /* SplashViewModel.swift */; };
 		C248FB0D2B3F640F00AD7244 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB0C2B3F640F00AD7244 /* NetworkManager.swift */; };
+		C248FB102B3F649600AD7244 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C248FB0F2B3F649600AD7244 /* Moya */; };
+		C248FB122B3F6D4A00AD7244 /* WordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB112B3F6D4A00AD7244 /* WordsAPI.swift */; };
+		C248FB142B3F713500AD7244 /* WordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB132B3F713500AD7244 /* WordsService.swift */; };
+		C248FB162B3F725F00AD7244 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB152B3F725F00AD7244 /* Words.swift */; };
+		C248FB182B3F72C900AD7244 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB172B3F72C900AD7244 /* Word.swift */; };
 		C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554582B3C3A6D003B083B /* AppDelegate.swift */; };
 		C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265545A2B3C3A6D003B083B /* SceneDelegate.swift */; };
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
@@ -81,6 +85,10 @@
 		C248FB082B3F159600AD7244 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		C248FB0A2B3F15B100AD7244 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		C248FB0C2B3F640F00AD7244 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C248FB112B3F6D4A00AD7244 /* WordsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsAPI.swift; sourceTree = "<group>"; };
+		C248FB132B3F713500AD7244 /* WordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsService.swift; sourceTree = "<group>"; };
+		C248FB152B3F725F00AD7244 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		C248FB172B3F72C900AD7244 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		C26554552B3C3A6D003B083B /* VocabGem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabGem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26554582B3C3A6D003B083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C265545A2B3C3A6D003B083B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,10 +117,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C248FAFC2B3EE8A700AD7244 /* Alamofire in Frameworks */,
 				C26554AA2B3C493F003B083B /* FirebaseDatabase in Frameworks */,
 				C26554AE2B3C493F003B083B /* FirebaseStorage in Frameworks */,
 				C26554A82B3C493F003B083B /* FirebaseAuth in Frameworks */,
+				C248FB102B3F649600AD7244 /* Moya in Frameworks */,
 				C26554AC2B3C493F003B083B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +251,8 @@
 				C26554BA2B3C6357003B083B /* AuthService.swift */,
 				C248FAEB2B3DD80D00AD7244 /* UserService.swift */,
 				C248FB0C2B3F640F00AD7244 /* NetworkManager.swift */,
+				C248FB112B3F6D4A00AD7244 /* WordsAPI.swift */,
+				C248FB132B3F713500AD7244 /* WordsService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -278,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				C248FAE92B3DD75D00AD7244 /* User.swift */,
+				C248FB152B3F725F00AD7244 /* Words.swift */,
+				C248FB172B3F72C900AD7244 /* Word.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,7 +354,7 @@
 				C26554A92B3C493F003B083B /* FirebaseDatabase */,
 				C26554AB2B3C493F003B083B /* FirebaseFirestore */,
 				C26554AD2B3C493F003B083B /* FirebaseStorage */,
-				C248FAFB2B3EE8A700AD7244 /* Alamofire */,
+				C248FB0F2B3F649600AD7244 /* Moya */,
 			);
 			productName = VocabGem;
 			productReference = C26554552B3C3A6D003B083B /* VocabGem.app */;
@@ -418,7 +430,7 @@
 			mainGroup = C265544C2B3C3A6D003B083B;
 			packageReferences = (
 				C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C248FAFA2B3EE8A700AD7244 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = C26554562B3C3A6D003B083B /* Products */;
 			projectDirPath = "";
@@ -470,7 +482,9 @@
 				C248FAF92B3EE3B400AD7244 /* HomeViewModel.swift in Sources */,
 				C248FAEC2B3DD80D00AD7244 /* UserService.swift in Sources */,
 				C248FB022B3EF5A300AD7244 /* TabBarController.swift in Sources */,
+				C248FB142B3F713500AD7244 /* WordsService.swift in Sources */,
 				C26554B02B3C4E86003B083B /* Utilities.swift in Sources */,
+				C248FB162B3F725F00AD7244 /* Words.swift in Sources */,
 				C248FB002B3EF09700AD7244 /* WordViewModel.swift in Sources */,
 				C26554952B3C3B1C003B083B /* Extensions.swift in Sources */,
 				C26554A12B3C4716003B083B /* LoginController.swift in Sources */,
@@ -481,6 +495,8 @@
 				C26554B62B3C5CDB003B083B /* RegisterViewModel.swift in Sources */,
 				C26554B42B3C5CD4003B083B /* RegisterController.swift in Sources */,
 				C248FB042B3EF5AC00AD7244 /* TabBarViewModel.swift in Sources */,
+				C248FB122B3F6D4A00AD7244 /* WordsAPI.swift in Sources */,
+				C248FB182B3F72C900AD7244 /* Word.swift in Sources */,
 				C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */,
 				C26554BB2B3C6357003B083B /* AuthService.swift in Sources */,
 				C248FB092B3F159600AD7244 /* SplashController.swift in Sources */,
@@ -829,12 +845,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C248FAFA2B3EE8A700AD7244 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 15.0.0;
 			};
 		};
 		C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -848,10 +864,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C248FAFB2B3EE8A700AD7244 /* Alamofire */ = {
+		C248FB0F2B3F649600AD7244 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C248FAFA2B3EE8A700AD7244 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		C26554A72B3C493F003B083B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

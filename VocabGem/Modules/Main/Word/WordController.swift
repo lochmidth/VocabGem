@@ -17,7 +17,7 @@ class WordController: UIViewController {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 36)
         label.textColor = .black
-        label.text = "Exaggerate".uppercased()
+//        label.text = "Exaggerate".uppercased()
         return label
     }()
     
@@ -25,7 +25,7 @@ class WordController: UIViewController {
         let label = UILabel()
         label.font = UIFont.italicSystemFont(ofSize: 18)
         label.textColor = .darkGray
-        label.text = "(ɪɡ'zædʒə,reɪt)"
+//        label.text = "(ɪɡ'zædʒə,reɪt)"
         return label
     }()
     
@@ -33,7 +33,7 @@ class WordController: UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .black
-        label.text = "verb"
+//        label.text = "verb"
         return label
     }()
     
@@ -42,7 +42,7 @@ class WordController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = "do something to an excessive degree"
+//        label.text = "do something to an excessive degree"
         return label
     }()
     
@@ -51,7 +51,7 @@ class WordController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = "Example Sentence:\ntended to romanticize and exaggerate this `gracious Old South' imagery"
+//        label.text = "Example Sentence:\ntended to romanticize and exaggerate this `gracious Old South' imagery"
         return label
     }()
     
@@ -59,7 +59,7 @@ class WordController: UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
-        label.text = "Synonyms:\noverdo\namplify\nhyperbolise"
+//        label.text = "Synonyms:\noverdo\namplify\nhyperbolise"
         return label
     }()
     
@@ -67,6 +67,9 @@ class WordController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "speaker.wave.2.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setDimensions(height: 50, width: 50)
+        
+        button.addTarget(self, action: #selector(didTapTextToSpeech), for: .touchUpInside)
+        
         return button
     }()
     
@@ -89,6 +92,13 @@ class WordController: UIViewController {
     
     deinit {
         print("DEBUG: \(self) deallocated.")
+    }
+    
+    //MARK: - Actions
+    
+    @objc func didTapTextToSpeech() {
+        guard let word = wordLabel.text else { return }
+        viewModel.textToSpeech(word: word)
     }
     
     //MARK: - Helpers
@@ -124,5 +134,12 @@ class WordController: UIViewController {
         view.addSubview(textToSpeechButton)
         textToSpeechButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, right: view.rightAnchor,
                                   paddingTop: 32, paddingRight: 16)
+        
+        wordLabel.text = viewModel.wordText
+        pronunciationLabel.text = viewModel.pronunciationText
+        partOfSpeechLabel.text = viewModel.partOfSpeechText
+        definitionLabel.text = viewModel.definitionText
+        exampleLabel.text = viewModel.exampleText
+        synonymsLabel.text = viewModel.synonymsText
     }
 }
