@@ -9,6 +9,8 @@ import UIKit
 
 class QuizController: UIViewController {
     
+    var viewModel: QuizViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

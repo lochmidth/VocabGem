@@ -23,16 +23,16 @@ class AppCoordinator: Coordinator {
     
     func start() {
         
-//        do {
-//            try Auth.auth().signOut()
-//        } catch {
-//            print("DEBUG: Error while signOut, \(error.localizedDescription)")
-//        }
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("DEBUG: Error while signOut, \(error.localizedDescription)")
+        }
         
         if Auth.auth().currentUser == nil {
             goToAuth()
         } else {
-            goToHome()
+            goToTabBar()
         }
     }
     
@@ -43,7 +43,7 @@ class AppCoordinator: Coordinator {
         child.start()
     }
     
-    func goToHome() {
+    func goToTabBar() {
         let child = TabBarCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
