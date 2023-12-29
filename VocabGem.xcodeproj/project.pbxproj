@@ -14,6 +14,13 @@
 		C248FAEE2B3E1B0B00AD7244 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */; };
 		C248FAF32B3E25F400AD7244 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF22B3E25F400AD7244 /* HomeController.swift */; };
 		C248FAF52B3E25FC00AD7244 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF42B3E25FC00AD7244 /* QuizController.swift */; };
+		C248FAF72B3EE32200AD7244 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF62B3EE32200AD7244 /* WordController.swift */; };
+		C248FAF92B3EE3B400AD7244 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAF82B3EE3B400AD7244 /* HomeViewModel.swift */; };
+		C248FAFC2B3EE8A700AD7244 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C248FAFB2B3EE8A700AD7244 /* Alamofire */; };
+		C248FAFE2B3EF09000AD7244 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAFD2B3EF09000AD7244 /* QuizViewModel.swift */; };
+		C248FB002B3EF09700AD7244 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAFF2B3EF09700AD7244 /* WordViewModel.swift */; };
+		C248FB022B3EF5A300AD7244 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB012B3EF5A300AD7244 /* TabBarController.swift */; };
+		C248FB042B3EF5AC00AD7244 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB032B3EF5AC00AD7244 /* TabBarViewModel.swift */; };
 		C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554582B3C3A6D003B083B /* AppDelegate.swift */; };
 		C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265545A2B3C3A6D003B083B /* SceneDelegate.swift */; };
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
@@ -62,6 +69,12 @@
 		C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		C248FAF22B3E25F400AD7244 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		C248FAF42B3E25FC00AD7244 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
+		C248FAF62B3EE32200AD7244 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
+		C248FAF82B3EE3B400AD7244 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C248FAFD2B3EF09000AD7244 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		C248FAFF2B3EF09700AD7244 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
+		C248FB012B3EF5A300AD7244 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C248FB032B3EF5AC00AD7244 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		C26554552B3C3A6D003B083B /* VocabGem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabGem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26554582B3C3A6D003B083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C265545A2B3C3A6D003B083B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C248FAFC2B3EE8A700AD7244 /* Alamofire in Frameworks */,
 				C26554AA2B3C493F003B083B /* FirebaseDatabase in Frameworks */,
 				C26554AE2B3C493F003B083B /* FirebaseStorage in Frameworks */,
 				C26554A82B3C493F003B083B /* FirebaseAuth in Frameworks */,
@@ -118,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				C248FAF22B3E25F400AD7244 /* HomeController.swift */,
+				C248FAF82B3EE3B400AD7244 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -125,6 +140,8 @@
 		C248FAF02B3E25C900AD7244 /* Word */ = {
 			isa = PBXGroup;
 			children = (
+				C248FAF62B3EE32200AD7244 /* WordController.swift */,
+				C248FAFF2B3EF09700AD7244 /* WordViewModel.swift */,
 			);
 			path = Word;
 			sourceTree = "<group>";
@@ -133,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C248FAF42B3E25FC00AD7244 /* QuizController.swift */,
+				C248FAFD2B3EF09000AD7244 /* QuizViewModel.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -277,6 +295,8 @@
 		C26554B72B3C623C003B083B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C248FB012B3EF5A300AD7244 /* TabBarController.swift */,
+				C248FB032B3EF5AC00AD7244 /* TabBarViewModel.swift */,
 				C248FAEF2B3E25B800AD7244 /* Home */,
 				C248FAF12B3E25CC00AD7244 /* Quiz */,
 				C248FAF02B3E25C900AD7244 /* Word */,
@@ -305,6 +325,7 @@
 				C26554A92B3C493F003B083B /* FirebaseDatabase */,
 				C26554AB2B3C493F003B083B /* FirebaseFirestore */,
 				C26554AD2B3C493F003B083B /* FirebaseStorage */,
+				C248FAFB2B3EE8A700AD7244 /* Alamofire */,
 			);
 			productName = VocabGem;
 			productReference = C26554552B3C3A6D003B083B /* VocabGem.app */;
@@ -380,6 +401,7 @@
 			mainGroup = C265544C2B3C3A6D003B083B;
 			packageReferences = (
 				C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C248FAFA2B3EE8A700AD7244 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C26554562B3C3A6D003B083B /* Products */;
 			projectDirPath = "";
@@ -425,16 +447,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26554A32B3C471D003B083B /* LoginViewModel.swift in Sources */,
+				C248FAF72B3EE32200AD7244 /* WordController.swift in Sources */,
 				C26554972B3C3B9B003B083B /* AppCoordinator.swift in Sources */,
+				C248FAF92B3EE3B400AD7244 /* HomeViewModel.swift in Sources */,
 				C248FAEC2B3DD80D00AD7244 /* UserService.swift in Sources */,
+				C248FB022B3EF5A300AD7244 /* TabBarController.swift in Sources */,
 				C26554B02B3C4E86003B083B /* Utilities.swift in Sources */,
+				C248FB002B3EF09700AD7244 /* WordViewModel.swift in Sources */,
 				C26554952B3C3B1C003B083B /* Extensions.swift in Sources */,
 				C26554A12B3C4716003B083B /* LoginController.swift in Sources */,
 				C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */,
+				C248FAFE2B3EF09000AD7244 /* QuizViewModel.swift in Sources */,
 				C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */,
 				C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */,
 				C26554B62B3C5CDB003B083B /* RegisterViewModel.swift in Sources */,
 				C26554B42B3C5CD4003B083B /* RegisterController.swift in Sources */,
+				C248FB042B3EF5AC00AD7244 /* TabBarViewModel.swift in Sources */,
 				C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */,
 				C26554BB2B3C6357003B083B /* AuthService.swift in Sources */,
 				C248FAF32B3E25F400AD7244 /* HomeController.swift in Sources */,
@@ -781,6 +809,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C248FAFA2B3EE8A700AD7244 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -792,6 +828,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C248FAFB2B3EE8A700AD7244 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C248FAFA2B3EE8A700AD7244 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		C26554A72B3C493F003B083B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

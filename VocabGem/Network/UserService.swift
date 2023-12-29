@@ -7,17 +7,16 @@
 
 import Foundation
 import FirebaseDatabase
-
-enum UserError: Error {
-    case fethingError
-}
+import FirebaseAuth
 
 class UserService {
     
-    func fetchUser(withUid uid: String) async throws -> User {
-        let (snapshot, _) = await REF_USERS.child(uid).observeSingleEventAndPreviousSiblingKey(of: .value)
-        guard let dictionary = snapshot.value else { throw UserError.fethingError }
-        let user = User(uid: uid, dictionary: dictionary as! [String : Any])
-        return user
+    func fetchUser(completion: @escaping(User) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        REF_USERS.child(uid).observeSingleEvent(of: .value) { snapshot, error in
+            guard let dictionary = snapshot.value else { return }
+            let user = User(uid: uid, dictionary: dictionary as! [String : Any])
+            completion(user)
+        }
     }
 }

@@ -40,7 +40,7 @@ class AuthCoordinator: Coordinator {
     func didFinishAuth() {
         parentCoordinator?.childDidFinish(self)
         navigationController.popToRootViewController(animated: false)
-        parentCoordinator?.goToHome()
+        parentCoordinator?.goToTabBar()
     }
     
     func dismiss() {

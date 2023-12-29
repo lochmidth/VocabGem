@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class LoginViewModel {
     
     weak var coordinator: AuthCoordinator?
     let authService: AuthService
+    let userService: UserService
     
-    init(authService: AuthService = AuthService()) {
+    init(authService: AuthService = AuthService(), userService: UserService = UserService()) {
         self.authService = authService
+        self.userService = userService
     }
     
     func handleShowRegister() {
