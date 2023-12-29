@@ -7,11 +7,17 @@
 
 import UIKit
 
-class AuthCoordinator: Coordinator {
+protocol AuthCoordinating: AnyObject {
+    func goToLoginPage()
+    func goToRegisterPage()
+    func didFinishAuth(withUser user: User)
+    func dismiss()
+}
+
+class AuthCoordinator: Coordinator, AuthCoordinating {
     
     var navigationController: UINavigationController
     weak var parentCoordinator: AppCoordinator?
-//    var isViewPresented = false
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -22,25 +28,23 @@ class AuthCoordinator: Coordinator {
     }
     
     func goToLoginPage() {
-        let loginController = LoginController()
         let loginViewModel = LoginViewModel()
         loginViewModel.coordinator = self
-        loginController.viewModel = loginViewModel
+        let loginController = LoginController(viewModel: loginViewModel)
         navigationController.pushViewController(loginController, animated: false)
     }
     
     func goToRegisterPage() {
-        let registerController = RegisterController()
         let registerViewModel = RegisterViewModel()
         registerViewModel.coordinator = self
-        registerController.viewModel = registerViewModel
+        let registerController = RegisterController(viewModel: registerViewModel)
         navigationController.pushViewController(registerController, animated: true)
     }
     
-    func didFinishAuth() {
+    func didFinishAuth(withUser user: User) {
         parentCoordinator?.childDidFinish(self)
         navigationController.popToRootViewController(animated: false)
-        parentCoordinator?.goToTabBar()
+        parentCoordinator?.goToTabBar(withUser: user)
     }
     
     func dismiss() {

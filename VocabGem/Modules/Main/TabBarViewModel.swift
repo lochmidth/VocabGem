@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class TabBarViewModel {
     //MARK: - Properties
@@ -13,11 +14,20 @@ class TabBarViewModel {
     weak var coordinator: TabBarCoordinator?
     let userService: UserService
     
+    //MARK: - Lifecycle
+    
     init(userService: UserService = UserService()) {
         self.userService = userService
     }
     
-    func fetchUser(completion: @escaping(User) -> Void) {
-        userService.fetchUser(completion: completion)
+    //MARK: - Helpers
+    
+    func handleSignOut() {
+        do {
+            try Auth.auth().signOut()
+            coordinator?.signOut()
+        } catch {
+            print("DEBUG: Error while signOut, \(error.localizedDescription)")
+        }
     }
 }

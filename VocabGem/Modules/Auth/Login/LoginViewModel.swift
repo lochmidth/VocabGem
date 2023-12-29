@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import FirebaseAuth
 
 class LoginViewModel {
     
-    weak var coordinator: AuthCoordinator?
+    weak var coordinator: AuthCoordinating?
     let authService: AuthService
     let userService: UserService
     
@@ -27,8 +26,9 @@ class LoginViewModel {
         Task {
             do {
                 try await authService.login(withEmail: email, password: password)
-                DispatchQueue.main.async {
-                    self.coordinator?.didFinishAuth()
+                let user = try await userService.fetchUser()
+                await MainActor.run {
+                    coordinator?.didFinishAuth(withUser: user)
                 }
             } catch {
                 print("DEBUG: Error while logging in, \(error.localizedDescription)")

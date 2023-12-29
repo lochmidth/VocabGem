@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseAuth
 
 class homeViewModel {
     //MARK: - Properties

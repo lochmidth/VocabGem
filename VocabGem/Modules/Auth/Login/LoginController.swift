@@ -10,7 +10,7 @@ import UIKit
 class LoginController: UIViewController {
     //MARK: - Properties
     
-    var viewModel: LoginViewModel?
+    var viewModel: LoginViewModel
     
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
@@ -69,6 +69,15 @@ class LoginController: UIViewController {
     
     //MARK: - Lifecycle
     
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,14 +91,14 @@ class LoginController: UIViewController {
     //MARK: - Actions
     
     @objc func handleShowRegister() {
-        viewModel?.handleShowRegister()
+        viewModel.handleShowRegister()
     }
     
     @objc func handleLogin() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
-        viewModel?.handleLogin(email: email, password: password)
+        viewModel.handleLogin(email: email, password: password)
     }
     
     @objc func handleLoginWithApple() {

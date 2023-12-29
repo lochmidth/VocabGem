@@ -22,32 +22,32 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("DEBUG: Error while signOut, \(error.localizedDescription)")
-        }
-        
-        if Auth.auth().currentUser == nil {
-            goToAuth()
-        } else {
-            goToTabBar()
-        }
+        goToSplash()
     }
     
-    private func goToAuth() {
+    private func goToSplash() {
+        let splashViewModel = SplashViewModel()
+        splashViewModel.coordinator = self
+        let splashController = SplashController(viewModel: splashViewModel)
+        navigationController.pushViewController(splashController, animated: false)
+    }
+    
+    func goToAuth() {
         let child = AuthCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
-    func goToTabBar() {
-        let child = TabBarCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
+    func goToTabBar(withUser user: User) {
+        if let existingHomeController = childCoordinators.first(where: { $0 is TabBarCoordinator }) as? TabBarCoordinator {
+            existingHomeController.user = user
+        } else {
+            let child = TabBarCoordinator(navigationController: navigationController, user: user)
+            child.parentCoordinator = self
+            childCoordinators.append(child)
+            child.start()
+        }
     }
     
     func childDidFinish(_ child: Coordinator?) {

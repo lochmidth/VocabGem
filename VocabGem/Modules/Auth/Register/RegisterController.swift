@@ -10,7 +10,7 @@ import UIKit
 class RegisterController: UIViewController {
     //MARK: - Properties
     
-    var viewModel: RegisterViewModel?
+    var viewModel: RegisterViewModel
     
     private lazy var emailContainerText = Utilities().inputContainerView(withImage: UIImage(named: "mail"), textField: emailTextField)
     
@@ -63,6 +63,15 @@ class RegisterController: UIViewController {
     
     //MARK: - Lifecycle
     
+    init(viewModel: RegisterViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,11 +90,11 @@ class RegisterController: UIViewController {
         guard let fullname = fullnameTextField.text else { return }
         guard let username = usernameTextField.text?.lowercased() else { return }
         
-        viewModel?.register(withCredentials: AuthCredentials(email: email, password: password, fullname: fullname, username: username))
+        viewModel.register(withCredentials: AuthCredentials(email: email, password: password, fullname: fullname, username: username))
     }
     
     @objc func handleShowLogin() {
-        viewModel?.dismissViewController()
+        viewModel.dismissViewController()
     }
     
     //MARK: - Helpers
