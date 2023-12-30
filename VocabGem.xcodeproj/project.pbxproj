@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE32B3C66A100AD7244 /* Constants.swift */; };
-		C248FAE82B3C6AA100AD7244 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C248FAE72B3C6AA100AD7244 /* GoogleService-Info.plist */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
 		C248FAEC2B3DD80D00AD7244 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAEB2B3DD80D00AD7244 /* UserService.swift */; };
 		C248FAEE2B3E1B0B00AD7244 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */; };
@@ -28,6 +27,9 @@
 		C248FB142B3F713500AD7244 /* WordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB132B3F713500AD7244 /* WordsService.swift */; };
 		C248FB162B3F725F00AD7244 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB152B3F725F00AD7244 /* Words.swift */; };
 		C248FB182B3F72C900AD7244 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB172B3F72C900AD7244 /* Word.swift */; };
+		C248FB1E2B40C4F500AD7244 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C248FB1D2B40C4F500AD7244 /* GoogleService-Info.plist */; };
+		C248FB212B40C57B00AD7244 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C248FB202B40C57B00AD7244 /* GoogleSignIn */; };
+		C248FB262B40CB6C00AD7244 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB252B40CB6C00AD7244 /* GoogleService.swift */; };
 		C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554582B3C3A6D003B083B /* AppDelegate.swift */; };
 		C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265545A2B3C3A6D003B083B /* SceneDelegate.swift */; };
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
@@ -70,7 +72,6 @@
 
 /* Begin PBXFileReference section */
 		C248FAE32B3C66A100AD7244 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C248FAE72B3C6AA100AD7244 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C248FAE92B3DD75D00AD7244 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C248FAEB2B3DD80D00AD7244 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -89,6 +90,8 @@
 		C248FB132B3F713500AD7244 /* WordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsService.swift; sourceTree = "<group>"; };
 		C248FB152B3F725F00AD7244 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		C248FB172B3F72C900AD7244 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		C248FB1D2B40C4F500AD7244 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C248FB252B40CB6C00AD7244 /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		C26554552B3C3A6D003B083B /* VocabGem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabGem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26554582B3C3A6D003B083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C265545A2B3C3A6D003B083B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 				C26554A82B3C493F003B083B /* FirebaseAuth in Frameworks */,
 				C248FB102B3F649600AD7244 /* Moya in Frameworks */,
 				C26554AC2B3C493F003B083B /* FirebaseFirestore in Frameworks */,
+				C248FB212B40C57B00AD7244 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +216,7 @@
 				C26554642B3C3A6F003B083B /* Assets.xcassets */,
 				C26554662B3C3A6F003B083B /* LaunchScreen.storyboard */,
 				C26554692B3C3A6F003B083B /* Info.plist */,
-				C248FAE72B3C6AA100AD7244 /* GoogleService-Info.plist */,
+				C248FB1D2B40C4F500AD7244 /* GoogleService-Info.plist */,
 				C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */,
 			);
 			path = VocabGem;
@@ -253,6 +257,7 @@
 				C248FB0C2B3F640F00AD7244 /* NetworkManager.swift */,
 				C248FB112B3F6D4A00AD7244 /* WordsAPI.swift */,
 				C248FB132B3F713500AD7244 /* WordsService.swift */,
+				C248FB252B40CB6C00AD7244 /* GoogleService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				C26554AB2B3C493F003B083B /* FirebaseFirestore */,
 				C26554AD2B3C493F003B083B /* FirebaseStorage */,
 				C248FB0F2B3F649600AD7244 /* Moya */,
+				C248FB202B40C57B00AD7244 /* GoogleSignIn */,
 			);
 			productName = VocabGem;
 			productReference = C26554552B3C3A6D003B083B /* VocabGem.app */;
@@ -431,6 +437,7 @@
 			packageReferences = (
 				C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */,
+				C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = C26554562B3C3A6D003B083B /* Products */;
 			projectDirPath = "";
@@ -450,7 +457,7 @@
 			files = (
 				C26554682B3C3A6F003B083B /* LaunchScreen.storyboard in Resources */,
 				C26554652B3C3A6F003B083B /* Assets.xcassets in Resources */,
-				C248FAE82B3C6AA100AD7244 /* GoogleService-Info.plist in Resources */,
+				C248FB1E2B40C4F500AD7244 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +510,7 @@
 				C248FAF32B3E25F400AD7244 /* HomeController.swift in Sources */,
 				C248FB0B2B3F15B100AD7244 /* SplashViewModel.swift in Sources */,
 				C248FAF52B3E25FC00AD7244 /* QuizController.swift in Sources */,
+				C248FB262B40CB6C00AD7244 /* GoogleService.swift in Sources */,
 				C265549E2B3C445F003B083B /* AuthCoordinator.swift in Sources */,
 				C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */,
 				C248FAEE2B3E1B0B00AD7244 /* TabBarCoordinator.swift in Sources */,
@@ -853,6 +861,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -868,6 +884,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		C248FB202B40C57B00AD7244 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 		C26554A72B3C493F003B083B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

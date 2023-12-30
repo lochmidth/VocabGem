@@ -21,11 +21,11 @@ class WordViewModel {
     }
     
     var partOfSpeechText: String {
-        word.results[0].partOfSpeech
+        word.results[0].partOfSpeech ?? ""
     }
     
     var definitionText: String {
-        word.results[0].definition
+        word.results[0].definition ?? "There is no definition available for this word"
     }
     
     var exampleText: String {

@@ -43,7 +43,7 @@ extension WordsAPI: TargetType {
                                                    "lettersMax": (letterPattern.count + 3),
                                                    "limit": 20,
                                                    "page": 1,
-                                                   "hadDetails": details], encoding: URLEncoding.default)
+                                                   "hasDetails": details], encoding: URLEncoding.default)
         case .getWordDetails:
             return .requestPlain
         }

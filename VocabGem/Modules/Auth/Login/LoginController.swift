@@ -55,15 +55,16 @@ class LoginController: UIViewController {
         return button
     }()
     
-    private lazy var loginWithAppleButton: UIButton = {
+    private lazy var loginWithGoogleButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(" Sign in with Apple", for: .normal)
+        button.setTitle("Sign in with Google", for: .normal)
+        button.setImage(UIImage(named: "google"), for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.backgroundColor = .mutedTaupe
         button.setTitleColor(.black, for: .normal)
         button.setDimensions(height: 50, width: 150)
-        button.addTarget(self, action: #selector(handleLoginWithApple), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLoginWithGoogle), for: .touchUpInside)
         return button
     }()
     
@@ -101,8 +102,8 @@ class LoginController: UIViewController {
         viewModel.handleLogin(email: email, password: password)
     }
     
-    @objc func handleLoginWithApple() {
-        print("DEBUG: Handle Login With Apple ID")
+    @objc func handleLoginWithGoogle() {
+        viewModel.handleLoginWithGoogle()
     }
     
     //MARK: - Helpers
@@ -129,8 +130,8 @@ class LoginController: UIViewController {
         divider.anchor(top: stack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                        paddingTop: 36, paddingLeft: 16, paddingRight: 16)
         
-        view.addSubview(loginWithAppleButton)
-        loginWithAppleButton.anchor(top: divider.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+        view.addSubview(loginWithGoogleButton)
+        loginWithGoogleButton.anchor(top: divider.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                                     paddingTop: 36, paddingLeft: 32, paddingRight: 32)
         
         view.addSubview(dontHaveAccountButton)

@@ -37,17 +37,15 @@ class homeViewModel {
     //        coordinator?.goToWord()
     //    }
     
-    func searchWords(letterPattern: String) {
+    func searchWords(letterPattern: String) async throws {
         if letterPattern.isEmpty {
             words?.results.data.removeAll()
         } else {
-            Task {
                 do {
                     self.words = try await wordsService.searchWords(letterPattern: letterPattern)
                 } catch {
                     print("DEBUG: Error while bulk searching the word: \(letterPattern), \(error.localizedDescription)")
                 }
-            }
         }
     }
     

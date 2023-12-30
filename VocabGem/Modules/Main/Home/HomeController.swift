@@ -152,9 +152,11 @@ extension HomeController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchTimer?.invalidate()
         
-        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
-            self?.viewModel.searchWords(letterPattern: searchText)
-            self?.tableView.reloadData()
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { [weak self] _ in
+            Task {
+                try await self?.viewModel.searchWords(letterPattern: searchText)
+                self?.tableView.reloadData()
+            }
         })
     }
     

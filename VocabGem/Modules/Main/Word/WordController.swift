@@ -55,7 +55,7 @@ class WordController: UIViewController {
         return label
     }()
     
-    private let textToSpeechButton: UIButton = {
+    private lazy var textToSpeechButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "speaker.wave.2.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setDimensions(height: 50, width: 50)

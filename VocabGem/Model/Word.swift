@@ -15,8 +15,8 @@ struct Word: Codable {
 
 // MARK: - Result
 struct Result: Codable {
-    let definition: String
-    let partOfSpeech: String
+    let definition: String?
+    let partOfSpeech: String?
     let synonyms: [String]?
     let examples: [String]?
 }
