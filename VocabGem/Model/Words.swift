@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Words
 struct Words: Codable {
-    let results: Results
+    var results: Results
 }
 
 // MARK: - Results
 struct Results: Codable {
-    let total: Int
-    let data: [String]
+    var total: Int
+    var data: [String]
 }

@@ -38,9 +38,12 @@ extension WordsAPI: TargetType {
     var task: Moya.Task {
         switch self {
         case let .searchWords(letterPattern):
+            let details = "definition,partOfSpeech,synonyms,examples"
             return .requestParameters(parameters: ["letterPattern": letterPattern,
+                                                   "lettersMax": (letterPattern.count + 3),
                                                    "limit": 20,
-                                                   "page": 1], encoding: URLEncoding.default)
+                                                   "page": 1,
+                                                   "hadDetails": details], encoding: URLEncoding.default)
         case .getWordDetails:
             return .requestPlain
         }

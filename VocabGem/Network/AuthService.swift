@@ -25,7 +25,6 @@ class AuthService {
     func login(withEmail email: String, password: String) async throws {
         do {
             try await Auth.auth().signIn(withEmail: email, password: password)
-            print("\(Auth.auth().currentUser?.email) is logged in.")
         } catch {
             throw error
         }

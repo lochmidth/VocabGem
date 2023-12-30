@@ -21,14 +21,6 @@ class WordController: UIViewController {
         return label
     }()
     
-    private let pronunciationLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.italicSystemFont(ofSize: 18)
-        label.textColor = .darkGray
-//        label.text = "(ɪɡ'zædʒə,reɪt)"
-        return label
-    }()
-    
     private let partOfSpeechLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
@@ -112,12 +104,8 @@ class WordController: UIViewController {
         wordLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
                          paddingTop: 32, paddingLeft: 16)
         
-        view.addSubview(pronunciationLabel)
-        pronunciationLabel.anchor(top: wordLabel.bottomAnchor, left: view.leftAnchor,
-                                  paddingTop: 12, paddingLeft: 16)
-        
         view.addSubview(partOfSpeechLabel)
-        partOfSpeechLabel.anchor(top: pronunciationLabel.bottomAnchor, left: view.leftAnchor,
+        partOfSpeechLabel.anchor(top: wordLabel.bottomAnchor, left: view.leftAnchor,
                                  paddingTop: 8, paddingLeft: 16)
         
         view.addSubview(definitionLabel)
@@ -136,7 +124,6 @@ class WordController: UIViewController {
                                   paddingTop: 32, paddingRight: 16)
         
         wordLabel.text = viewModel.wordText
-        pronunciationLabel.text = viewModel.pronunciationText
         partOfSpeechLabel.text = viewModel.partOfSpeechText
         definitionLabel.text = viewModel.definitionText
         exampleLabel.text = viewModel.exampleText

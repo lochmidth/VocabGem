@@ -30,28 +30,6 @@ class HomeController: UIViewController {
         return label
     }()
     
-//    private lazy var wordTextField: UITextField = {
-//        let tf = UITextField()
-//        tf.setHeight(50)
-//        tf.layer.cornerRadius = 4
-//        tf.borderStyle = .roundedRect
-//        tf.placeholder = "Search for a word"
-//
-//        tf.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-//
-//        return tf
-//    }()
-//
-//    private lazy var searchButton: UIButton = {
-//        let button = UIButton(type: .system)
-//        button.setDimensions(height: 50, width: 50)
-//        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-//        button.isEnabled = false
-//        button.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
-//
-//        return button
-//    }()
-    
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search for words"
@@ -68,6 +46,18 @@ class HomeController: UIViewController {
         return tv
     }()
     
+    private lazy var clearRecentsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("🗑️ Clear recent words", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        
+        button.addTarget(self, action: #selector(didTapClearRecentWords), for: .touchUpInside)
+        
+        return button
+        
+    }()
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -76,6 +66,16 @@ class HomeController: UIViewController {
         configureUI()
         configureTableView()
         configureSearchBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Task {
+            try await viewModel.fetchRecentWords()
+            configureClearButton()
+            tableView.reloadData()
+        }
     }
     
     init(viewModel: homeViewModel) {
@@ -93,15 +93,14 @@ class HomeController: UIViewController {
     
     //MARK: - Actions
     
-//    @objc func textFieldDidChange() {
-//        searchButton.isEnabled = !(wordTextField.text?.isEmpty ?? true)
-//    }
+    @objc func didTapClearRecentWords() {
+        Task {
+            try await viewModel.clearRecentWords()
+            tableView.reloadData()
+            configureClearButton()
+        }
+    }
     
-//    @objc func didTapSearch() {
-//        guard let word = wordTextField.text else { return }
-//        wordTextField.text = ""
-//        viewModel.didTapSearchButton(withWord: word)
-//    }
     
     //MARK: - Helpers
     
@@ -117,17 +116,18 @@ class HomeController: UIViewController {
         stack.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
         view.addSubview(searchBar)
-//        view.addSubview(searchButton)
         searchBar.anchor(top: stack.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                              paddingTop: 86, paddingLeft: 16, paddingRight: 16)
-//        searchButton.anchor(top: stack.bottomAnchor, left: wordTextField.rightAnchor, right: view.rightAnchor,
-//                            paddingTop: 86, paddingLeft: 8, paddingRight: 16)
         
         view.addSubview(tableView)
         tableView.anchor(top: searchBar.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                          paddingTop: 8, paddingLeft: 16, paddingRight: 16)
         
+        view.addSubview(clearRecentsButton)
+        clearRecentsButton.centerX(inView: view, topAnchor: tableView.bottomAnchor, paddingTop: 8)
+        
         greetingsLabel.text = viewModel.greetingText
+        
     }
     
     private func configureTableView() {
@@ -139,6 +139,10 @@ class HomeController: UIViewController {
     private func configureSearchBar() {
         searchBar.delegate = self
         searchBar.returnKeyType = .done
+    }
+    
+    private func configureClearButton() {
+        clearRecentsButton.isHidden = viewModel.clearRecentsButtonVisibility()
     }
 }
 
@@ -160,6 +164,7 @@ extension HomeController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableView.reloadData()
         searchBar.resignFirstResponder()
     }
 }
@@ -168,22 +173,21 @@ extension HomeController: UISearchBarDelegate {
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Search Results"
+        return viewModel.titleForHeaderInSection()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.words?.results.data.count ?? 0
+        return viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = viewModel.words?.results.data[indexPath.item]
+        cell.textLabel?.text = viewModel.determineRecentsOrSearch(atIndex: indexPath.item)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let word = viewModel.words?.results.data[indexPath.item] else { return }
-        viewModel.getWordDetails(word: word)
+        viewModel.didSelectRowAt(index: indexPath.item)
     }
     
 }

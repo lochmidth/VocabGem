@@ -20,10 +20,6 @@ class WordViewModel {
         word.word
     }
     
-    var pronunciationText: String {
-        word.pronunciation.all
-    }
-    
     var partOfSpeechText: String {
         word.results[0].partOfSpeech
     }

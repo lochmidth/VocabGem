@@ -11,12 +11,6 @@ import Foundation
 struct Word: Codable {
     let word: String
     let results: [Result]
-    let pronunciation: Pronunciation
-}
-
-// MARK: - Pronunciation
-struct Pronunciation: Codable {
-    let all: String
 }
 
 // MARK: - Result
@@ -26,8 +20,3 @@ struct Result: Codable {
     let synonyms: [String]?
     let examples: [String]?
 }
-
-//enum PartOfSpeech: String, Codable {
-//    case noun = "noun"
-//    case verb = "verb"
-//}
