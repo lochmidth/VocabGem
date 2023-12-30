@@ -45,8 +45,8 @@ class TabBarCoordinator: Coordinator {
         navigationController.pushViewController(tabBarController, animated: true)
     }
     
-    func goToWord() {
-        let wordViewModel = WordViewModel()
+    func goToWord(word: Word) {
+        let wordViewModel = WordViewModel(word: word)
         wordViewModel.coordinator = self
         let wordController = WordController(viewModel: wordViewModel)
         navigationController.pushViewController(wordController, animated: true)

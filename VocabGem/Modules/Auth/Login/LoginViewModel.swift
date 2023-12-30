@@ -12,10 +12,12 @@ class LoginViewModel {
     weak var coordinator: AuthCoordinating?
     let authService: AuthService
     let userService: UserService
+    let googleService: GoogleService
     
-    init(authService: AuthService = AuthService(), userService: UserService = UserService()) {
+    init(authService: AuthService = AuthService(), userService: UserService = UserService(), googleService: GoogleService = GoogleService()) {
         self.authService = authService
         self.userService = userService
+        self.googleService = googleService
     }
     
     func handleShowRegister() {
@@ -36,4 +38,12 @@ class LoginViewModel {
         }
     }
     
+    func handleLoginWithGoogle() {
+        Task {
+            let user = try await googleService.signInWithGoogle()
+            await MainActor.run(body: {
+                coordinator?.didFinishAuth(withUser: user)
+            })
+        }
+    }
 }
