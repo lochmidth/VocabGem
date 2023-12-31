@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginController: UIViewController {
     //MARK: - Properties
@@ -55,14 +56,22 @@ class LoginController: UIViewController {
         return button
     }()
     
-    private lazy var loginWithGoogleButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sign in with Google", for: .normal)
-        button.setImage(UIImage(named: "google"), for: .normal)
+    //    private lazy var loginWithGoogleButton: UIButton = {
+    //        let button = UIButton(type: .system)
+    //        button.setTitle("Sign in with Google", for: .normal)
+    //        button.setImage(UIImage(named: "google"), for: .normal)
+    //        button.layer.cornerRadius = 5
+    //        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    //        button.backgroundColor = .mutedTaupe
+    //        button.setTitleColor(.black, for: .normal)
+    //        button.setDimensions(height: 50, width: 150)
+    //        button.addTarget(self, action: #selector(handleLoginWithGoogle), for: .touchUpInside)
+    //        return button
+    //    }()
+    
+    private lazy var loginWithGoogleButton: GIDSignInButton = {
+        let button = GIDSignInButton()
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.backgroundColor = .mutedTaupe
-        button.setTitleColor(.black, for: .normal)
         button.setDimensions(height: 50, width: 150)
         button.addTarget(self, action: #selector(handleLoginWithGoogle), for: .touchUpInside)
         return button
@@ -132,7 +141,7 @@ class LoginController: UIViewController {
         
         view.addSubview(loginWithGoogleButton)
         loginWithGoogleButton.anchor(top: divider.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
-                                    paddingTop: 36, paddingLeft: 32, paddingRight: 32)
+                                     paddingTop: 36, paddingLeft: 32, paddingRight: 32)
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
