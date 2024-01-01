@@ -213,7 +213,7 @@
 				C26554922B3C3AD7003B083B /* View */,
 				C26554912B3C3AD6003B083B /* Coordinators */,
 				C26554902B3C3AD5003B083B /* Modules */,
-				C265548F2B3C3AD4003B083B /* Network */,
+				C265548F2B3C3AD4003B083B /* Services */,
 				C265548B2B3C3AC7003B083B /* Utils */,
 				C26554582B3C3A6D003B083B /* AppDelegate.swift */,
 				C265545A2B3C3A6D003B083B /* SceneDelegate.swift */,
@@ -253,7 +253,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C265548F2B3C3AD4003B083B /* Network */ = {
+		C265548F2B3C3AD4003B083B /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				C26554BA2B3C6357003B083B /* AuthService.swift */,
@@ -264,7 +264,7 @@
 				C248FB252B40CB6C00AD7244 /* GoogleService.swift */,
 				C248FB292B43094300AD7244 /* QuizManager.swift */,
 			);
-			path = Network;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C26554902B3C3AD5003B083B /* Modules */ = {
