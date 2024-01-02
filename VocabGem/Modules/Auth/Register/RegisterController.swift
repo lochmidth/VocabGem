@@ -85,16 +85,23 @@ class RegisterController: UIViewController {
     //MARK: - Actions
     
     @objc func handleRegister() {
+        showLoader(true)
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
         guard let username = usernameTextField.text?.lowercased() else { return }
-        
-        viewModel.register(withCredentials: AuthCredentials(email: email, password: password, fullname: fullname, username: username))
+        Task {
+            await viewModel.register(withCredentials: AuthCredentials(email: email, password: password, fullname: fullname, username: username))
+            showLoader(false)
+        }
     }
     
     @objc func handleShowLogin() {
-        viewModel.dismissViewController()
+        showLoader(true)
+        Task {
+            await viewModel.dismissViewController()
+            showLoader(false)
+        }
     }
     
     //MARK: - Helpers

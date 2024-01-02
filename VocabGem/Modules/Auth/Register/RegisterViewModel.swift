@@ -15,18 +15,17 @@ class RegisterViewModel {
         self.userService = userService
     }
     
-    func dismissViewController() {
-        coordinator?.dismiss()
+    func dismissViewController() async {
+        await coordinator?.dismiss()
     }
     
-    func register(withCredentials credentials: AuthCredentials) {
-        Task {
+    func register(withCredentials credentials: AuthCredentials) async {
+        do {
             try await authService.register(withCredentials: credentials)
             let user = try await userService.fetchUser()
-            await MainActor.run(body: {
-                coordinator?.didFinishAuth(withUser: user)
-            })
+            await coordinator?.didFinishAuth(withUser: user)
+        } catch {
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while registering the user, \(error.localizedDescription)")
         }
-        
     }
 }

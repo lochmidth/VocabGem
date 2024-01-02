@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol AuthCoordinating: AnyObject {
+@MainActor
+protocol AuthCoordinating: Coordinator {
     func goToLoginPage()
     func goToRegisterPage()
     func didFinishAuth(withUser user: User)
     func dismiss()
 }
 
-class AuthCoordinator: Coordinator, AuthCoordinating {
-    
+class AuthCoordinator: AuthCoordinating {
     var navigationController: UINavigationController
     weak var parentCoordinator: AppCoordinator?
     
@@ -50,4 +50,9 @@ class AuthCoordinator: Coordinator, AuthCoordinating {
     func dismiss() {
         navigationController.popViewController(animated: true)
     }
+    
+    
+//    func showMessage(withTitle title: String, message: String) {
+//        parentCoordinator?.showMessage(withTitle: title, message: message)
+//    }
 }

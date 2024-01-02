@@ -7,7 +7,14 @@
 
 import UIKit
 
-class TabBarCoordinator: Coordinator {
+@MainActor
+protocol TabBarCoordinating: Coordinator {
+    func configureTabBarController()
+    func goToWord(word: Word)
+    func signOut()
+}
+
+class TabBarCoordinator: TabBarCoordinating {
     var navigationController: UINavigationController
     weak var parentCoordinator: AppCoordinator?
     var user: User
@@ -21,12 +28,12 @@ class TabBarCoordinator: Coordinator {
         configureTabBarController()
     }
     
-    private func configureTabBarController() {
+    func configureTabBarController() {
         let tabBarViewModel = TabBarViewModel()
         tabBarViewModel.coordinator = self
         let tabBarController = TabBarController(viewModel: tabBarViewModel)
         
-        let homeViewModel = homeViewModel(user: user)
+        let homeViewModel = HomeViewModel(user: user)
         homeViewModel.coordinator = self
         let homeController = HomeController(viewModel: homeViewModel)
         homeController.tabBarItem = UITabBarItem(title: "Home",
@@ -56,5 +63,10 @@ class TabBarCoordinator: Coordinator {
         navigationController.popToRootViewController(animated: true)
         parentCoordinator?.childDidFinish(self)
     }
+    
+    
+//    func showMessage(withTitle title: String, message: String) {
+//        parentCoordinator?.showMessage(withTitle: title, message: message)
+//    }
     
 }

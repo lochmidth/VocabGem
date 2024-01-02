@@ -36,7 +36,7 @@ class NetworkManager: NetworkManaging {
                         let value = try self.decoder.decode(T.self, from: response.data)
                         continuation.resume(with: .success(value))
                     } catch {
-                        continuation.resume(with: .failure(NetworkError.invlalidData))
+                        continuation.resume(with: .failure(error))
                     }
                 case .failure(let error):
                     continuation.resume(with: .failure(error))

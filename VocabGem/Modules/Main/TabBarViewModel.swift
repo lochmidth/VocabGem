@@ -11,7 +11,7 @@ import FirebaseAuth
 class TabBarViewModel {
     //MARK: - Properties
     
-    weak var coordinator: TabBarCoordinator?
+    weak var coordinator: TabBarCoordinating?
     let userService: UserService
     
     //MARK: - Lifecycle
@@ -22,12 +22,12 @@ class TabBarViewModel {
     
     //MARK: - Helpers
     
-    func handleSignOut() {
+    func handleSignOut() async {
         do {
             try Auth.auth().signOut()
-            coordinator?.signOut()
+            await coordinator?.signOut()
         } catch {
-            print("DEBUG: Error while signOut, \(error.localizedDescription)")
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error While signing the user out, \(error.localizedDescription)")
         }
     }
 }

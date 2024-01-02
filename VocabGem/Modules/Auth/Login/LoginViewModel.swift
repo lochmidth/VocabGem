@@ -12,38 +12,34 @@ class LoginViewModel {
     weak var coordinator: AuthCoordinating?
     let authService: AuthService
     let userService: UserService
-    let googleService: GoogleService
+    let googleService: GoogleServicing
     
-    init(authService: AuthService = AuthService(), userService: UserService = UserService(), googleService: GoogleService = GoogleService()) {
+    init(authService: AuthService = AuthService(), userService: UserService = UserService(), googleService: GoogleServicing = GoogleService()) {
         self.authService = authService
         self.userService = userService
         self.googleService = googleService
     }
     
-    func handleShowRegister() {
-        coordinator?.goToRegisterPage()
+    func handleShowRegister() async {
+        await coordinator?.goToRegisterPage()
     }
     
-    func handleLogin(email: String, password: String) {
-        Task {
-            do {
-                try await authService.login(withEmail: email, password: password)
-                let user = try await userService.fetchUser()
-                await MainActor.run {
-                    coordinator?.didFinishAuth(withUser: user)
-                }
-            } catch {
-                print("DEBUG: Error while logging in, \(error.localizedDescription)")
-            }
+    func handleLogin(email: String, password: String) async  {
+        do {
+            try await authService.login(withEmail: email, password: password)
+            let user = try await userService.fetchUser()
+            await coordinator?.didFinishAuth(withUser: user)
+        } catch {
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while logging in, \(error.localizedDescription)")
         }
     }
     
-    func handleLoginWithGoogle() {
-        Task {
+    func handleLoginWithGoogle() async {
+        do {
             let user = try await googleService.signInWithGoogle()
-            await MainActor.run(body: {
-                coordinator?.didFinishAuth(withUser: user)
-            })
+            await coordinator?.didFinishAuth(withUser: user)
+        } catch {
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while Login with Google Service, \(error.localizedDescription)")
         }
     }
 }
