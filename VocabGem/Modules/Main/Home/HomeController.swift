@@ -15,7 +15,7 @@ class HomeController: UIViewController {
     
     var searchTimer: Timer?
     
-    var viewModel: homeViewModel
+    var viewModel: HomeViewModel
     
     private let appLabel: UILabel = {
         let label = UILabel()
@@ -78,7 +78,7 @@ class HomeController: UIViewController {
         }
     }
     
-    init(viewModel: homeViewModel) {
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -189,7 +189,9 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRowAt(index: indexPath.item)
+        Task {
+            await viewModel.didSelectRowAt(index: indexPath.item)
+        }
     }
     
 }

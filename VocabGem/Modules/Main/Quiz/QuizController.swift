@@ -106,7 +106,6 @@ class QuizController: UIViewController {
             sender.backgroundColor = .clear
             self?.updateQuiz()
         }
-
     }
     
     //MARK: - Helpers

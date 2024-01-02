@@ -22,26 +22,24 @@ struct AuthCredentials {
 
 class AuthService {
     
+    let auth: Auth
+    
+    init(auth: Auth = Auth.auth()) {
+        self.auth = auth
+    }
+    
     func login(withEmail email: String, password: String) async throws {
-        do {
-            try await Auth.auth().signIn(withEmail: email, password: password)
-        } catch {
-            throw error
-        }
+        try await auth.signIn(withEmail: email, password: password)
     }
     
     func register(withCredentials credentials: AuthCredentials) async throws {
-        do {
-            let result = try await Auth.auth().createUser(withEmail: credentials.email, password: credentials.password)
-            let uid = result.user.uid
-            
-            let values = ["email": credentials.email,
-                          "username": credentials.username,
-                          "fullname": credentials.fullname]
-            
-            try await REF_USERS.child(uid).updateChildValues(values)
-        } catch {
-            throw error
-        }
+        let result = try await Auth.auth().createUser(withEmail: credentials.email, password: credentials.password)
+        let uid = result.user.uid
+        
+        let values = ["email": credentials.email,
+                      "username": credentials.username,
+                      "fullname": credentials.fullname]
+        
+        try await REF_USERS.child(uid).updateChildValues(values)
     }
 }

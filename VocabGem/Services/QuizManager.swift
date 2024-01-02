@@ -17,7 +17,6 @@ enum QuizError: Error {
 class QuizManager {
     var questions: [Quiz] = []
     var index = 0
-    var score: Int = 0
     
     private func getCurrentQuestion() -> Quiz {
         if index < questions.count - 1 {
@@ -58,12 +57,8 @@ class QuizManager {
         })
     }
     
-    func updateScore() async throws {
+    func updateScore(score: Int) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { throw QuizError.updateError }
-        do {
-            try await REF_USERS.child(uid).child("score").setValue(score)
-        } catch {
-            throw error
-        }
+        try await REF_USERS.child(uid).child("score").setValue(score)
     }
 }

@@ -23,80 +23,65 @@ extension UIColor {
 
 extension UIViewController {
     
-    func showMessage(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true)
-    }
-    
-    func addShadow() {
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.55
-        view.layer.shadowOffset = CGSize(width: 0.55, height: 0.55)
-        view.layer.masksToBounds = false
-    }
+   
 }
 
-extension URL {
-    var queryParameters: [String: String]? {
-        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
-              let queryItems = components.queryItems else {
-            return nil
-        }
-
-        var parameters = [String: String]()
-        for item in queryItems {
-            parameters[item.name] = item.value
-        }
-
-        return parameters
-    }
-}
-
-extension Notification.Name {
-    static let didReceiveCode = Notification.Name("DidReceiveCodeNotification")
-}
+//extension URL {
+//    var queryParameters: [String: String]? {
+//        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
+//              let queryItems = components.queryItems else {
+//            return nil
+//        }
+//
+//        var parameters = [String: String]()
+//        for item in queryItems {
+//            parameters[item.name] = item.value
+//        }
+//
+//        return parameters
+//    }
+//}
 
 extension UIView {
     
-    func inputContainerView(image: UIImage?, textField: UITextField? = nil, segmentedControl: UISegmentedControl? = nil ) -> UIView {
-        let view = UIView()
-        
-        let imageView = UIImageView()
-        imageView.image = image
-        imageView.alpha = 0.87
-        view.addSubview(imageView)
-        
-        if let textField {
-            imageView.centerY(inView: view)
-            imageView.anchor(left: view.leftAnchor, paddingLeft: 18, width: 24, height: 24)
-            
-            view.addSubview(textField)
-            textField.centerY(inView: view)
-            textField.anchor(left: imageView.rightAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
-            
-            view.setHeight(50)
-        }
-        
-        if let segmentedControl {
-            imageView.anchor(top: view.topAnchor, left: view.leftAnchor,
-                             paddingTop: -8 ,paddingLeft: 18, width: 24, height: 24)
-            view.addSubview(segmentedControl)
-            segmentedControl.anchor(left: view.leftAnchor, right: view.rightAnchor,
-                                    paddingLeft: 8, paddingRight: 8)
-            segmentedControl.centerY(inView: view, constant: 8)
-            
-            view.setHeight(80)
-        }
-        
-        let separatorView = UIView()
-        separatorView.backgroundColor = .lightGray
-        view.addSubview(separatorView)
-        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,
-                             paddingLeft: 10, paddingRight: 10, height: 0.75)
-        
-        return view
-    }
+//    func inputContainerView(image: UIImage?, textField: UITextField? = nil, segmentedControl: UISegmentedControl? = nil ) -> UIView {
+//        let view = UIView()
+//        
+//        let imageView = UIImageView()
+//        imageView.image = image
+//        imageView.alpha = 0.87
+//        view.addSubview(imageView)
+//        
+//        if let textField {
+//            imageView.centerY(inView: view)
+//            imageView.anchor(left: view.leftAnchor, paddingLeft: 18, width: 24, height: 24)
+//            
+//            view.addSubview(textField)
+//            textField.centerY(inView: view)
+//            textField.anchor(left: imageView.rightAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
+//            
+//            view.setHeight(50)
+//        }
+//        
+//        if let segmentedControl {
+//            imageView.anchor(top: view.topAnchor, left: view.leftAnchor,
+//                             paddingTop: -8 ,paddingLeft: 18, width: 24, height: 24)
+//            view.addSubview(segmentedControl)
+//            segmentedControl.anchor(left: view.leftAnchor, right: view.rightAnchor,
+//                                    paddingLeft: 8, paddingRight: 8)
+//            segmentedControl.centerY(inView: view, constant: 8)
+//            
+//            view.setHeight(80)
+//        }
+//        
+//        let separatorView = UIView()
+//        separatorView.backgroundColor = .lightGray
+//        view.addSubview(separatorView)
+//        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,
+//                             paddingLeft: 10, paddingRight: 10, height: 0.75)
+//        
+//        return view
+//    }
     
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,
@@ -193,17 +178,17 @@ extension UIView {
                bottom: view.bottomAnchor, right: view.rightAnchor)
     }
 }
-
-extension UITableViewCell {
-    var selectionColor: UIColor {
-        set {
-            let view = UIView()
-            view.backgroundColor = newValue
-            self.selectedBackgroundView = view
-        }
-        get {
-            return self.selectedBackgroundView?.backgroundColor ?? UIColor.clear
-        }
-    }
-}
+//
+//extension UITableViewCell {
+//    var selectionColor: UIColor {
+//        set {
+//            let view = UIView()
+//            view.backgroundColor = newValue
+//            self.selectedBackgroundView = view
+//        }
+//        get {
+//            return self.selectedBackgroundView?.backgroundColor ?? UIColor.clear
+//        }
+//    }
+//}
 

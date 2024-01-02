@@ -108,11 +108,15 @@ class LoginController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
-        viewModel.handleLogin(email: email, password: password)
+        Task {
+            await viewModel.handleLogin(email: email, password: password)
+        }
     }
     
     @objc func handleLoginWithGoogle() {
-        viewModel.handleLoginWithGoogle()
+        Task {
+            await viewModel.handleLoginWithGoogle()
+        }
     }
     
     //MARK: - Helpers

@@ -8,9 +8,19 @@
 import UIKit
 import FirebaseAuth
 
+@MainActor
 protocol Coordinator: AnyObject {
     var navigationController : UINavigationController { get set }
     func start()
+    func showMessage(withTitle title: String, message: String)
+}
+
+extension Coordinator {
+    func showMessage(withTitle title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        navigationController.present(alert, animated: true)
+    }
 }
 
 class AppCoordinator: Coordinator {
@@ -58,4 +68,8 @@ class AppCoordinator: Coordinator {
             }
         }
     }
+    
+//    func showMessage(withTitle title: String, message: String) {
+//        navigationController.showMessage(withTitle: title, message: message)
+//    }
 }

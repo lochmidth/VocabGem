@@ -22,15 +22,12 @@ class SplashViewModel {
         case true:
             Task {
                 let user = try await userService.fetchUser()
-                await MainActor.run {
-                    coordinator?.goToTabBar(withUser: user)
-                }
+                await coordinator?.goToTabBar(withUser: user)
             }
-//            userService.fetchUser { [weak self] user in
-//                self?.coordinator?.goToTabBar(withUser: user)
-//            }
         case false:
-            coordinator?.goToAuth()
+            Task {
+                await coordinator?.goToAuth()
+            }
         }
     }
 }

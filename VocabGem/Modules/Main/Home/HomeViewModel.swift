@@ -7,7 +7,7 @@
 
 import Foundation
 
-class homeViewModel {
+class HomeViewModel {
     //MARK: - Properties
     
     weak var coordinator: TabBarCoordinator?
@@ -37,46 +37,43 @@ class homeViewModel {
     //        coordinator?.goToWord()
     //    }
     
-    func searchWords(letterPattern: String) async throws {
+    func searchWords(letterPattern: String) async {
         if letterPattern.isEmpty {
             words?.results.data.removeAll()
         } else {
-                do {
-                    self.words = try await wordsService.searchWords(letterPattern: letterPattern)
-                } catch {
-                    print("DEBUG: Error while bulk searching the word: \(letterPattern), \(error.localizedDescription)")
-                }
-        }
-    }
-    
-    private func getWordDetails(word: String) {
-        Task {
             do {
-                self.wordDetail = try await wordsService.getWordDetails(word: word)
-                try await saveToRecents(word: word)
-                guard let wordDetail = wordDetail else { return }
-                await MainActor.run(body: {
-                    self.coordinator?.goToWord(word: wordDetail)
-                })
+                self.words = try await wordsService.searchWords(letterPattern: letterPattern)
             } catch {
-                print("DEBUG: Error while getting the word: \(word), \(error.localizedDescription)")
+                await coordinator?.showMessage(withTitle: "Oops!",
+                                               message: "Error while bulk searching the word: \(letterPattern), \(error.localizedDescription)")
             }
         }
     }
     
-    private func saveToRecents(word: String) async throws {
+    private func getWordDetails(word: String) async {
         do {
-            try await wordsService.saveToRecents(word: word)
+            self.wordDetail = try await wordsService.getWordDetails(word: word)
+            try await saveToRecents(word: word)
+            guard let wordDetail = wordDetail else { return }
+            await self.coordinator?.goToWord(word: wordDetail)
         } catch {
-            print("DEBUG: Error while saving \(word) to recents, \(error.localizedDescription)")
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while getting the word: \(word), \(error.localizedDescription)")
         }
     }
     
-    func fetchRecentWords() async throws {
-            do {
-                self.recentWords = try await wordsService.fetchRecentWords()
-            } catch {
-                print("DEBUG: Error while fetching recent words, \(error.localizedDescription)")
+    private func saveToRecents(word: String) async {
+        do {
+            try await wordsService.saveToRecents(word: word)
+        } catch {
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while saving \(word) to recents, \(error.localizedDescription)")
+        }
+    }
+    
+    func fetchRecentWords() async {
+        do {
+            self.recentWords = try await wordsService.fetchRecentWords()
+        } catch {
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while fetching recent words, \(error.localizedDescription)")
         }
     }
     
@@ -113,17 +110,17 @@ class homeViewModel {
         return recentWords[index]
     }
     
-    func didSelectRowAt(index: Int) {
+    func didSelectRowAt(index: Int) async {
         if let words = words {
             if words.results.data.isEmpty {
-                getWordDetails(word: recentWords[index])
+                await getWordDetails(word: recentWords[index])
                 return
             } else {
-                getWordDetails(word: words.results.data[index])
+                await getWordDetails(word: words.results.data[index])
                 return
             }
         }
-        getWordDetails(word: recentWords[index])
+        await getWordDetails(word: recentWords[index])
         return
     }
     
@@ -135,12 +132,12 @@ class homeViewModel {
         }
     }
     
-    func clearRecentWords() async throws {
+    func clearRecentWords() async {
         do {
             try await wordsService.clearRecentWords()
             recentWords.removeAll()
         } catch {
-            print("DEBUG: Error while clearing the recent words, \(error.localizedDescription)")
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error while clearing the recent words, \(error.localizedDescription)")
         }
     }
 }
