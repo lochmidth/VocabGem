@@ -15,19 +15,19 @@ class SplashViewModel {
         self.userService = userService
     }
     
-    func checkForAuth() {
+    func checkForAuth() async {
         let status = userService.checkIfUserIsLoggedIn()
-        
         switch status {
         case true:
-            Task {
+            do {
                 let user = try await userService.fetchUser()
                 await coordinator?.goToTabBar(withUser: user)
+            } catch {
+                await coordinator?.showMessage(withTitle: "Oops!",
+                                         message: "Error while authenticating the user, \(error.localizedDescription)")
             }
         case false:
-            Task {
-                await coordinator?.goToAuth()
-            }
+            await coordinator?.goToAuth()
         }
     }
 }

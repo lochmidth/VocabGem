@@ -20,10 +20,8 @@ class LoginViewModel {
         self.googleService = googleService
     }
     
-    func handleShowRegister() {
-        Task {
-            await coordinator?.goToRegisterPage()
-        }
+    func handleShowRegister() async {
+        await coordinator?.goToRegisterPage()
     }
     
     func handleLogin(email: String, password: String) async  {

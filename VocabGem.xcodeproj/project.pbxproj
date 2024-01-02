@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C23654242B448536008A742D /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C23654232B448536008A742D /* JGProgressHUD */; };
 		C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE32B3C66A100AD7244 /* Constants.swift */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
 		C248FAEC2B3DD80D00AD7244 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAEB2B3DD80D00AD7244 /* UserService.swift */; };
@@ -125,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26554AA2B3C493F003B083B /* FirebaseDatabase in Frameworks */,
+				C23654242B448536008A742D /* JGProgressHUD in Frameworks */,
 				C26554AE2B3C493F003B083B /* FirebaseStorage in Frameworks */,
 				C26554A82B3C493F003B083B /* FirebaseAuth in Frameworks */,
 				C248FB102B3F649600AD7244 /* Moya in Frameworks */,
@@ -367,6 +369,7 @@
 				C26554AD2B3C493F003B083B /* FirebaseStorage */,
 				C248FB0F2B3F649600AD7244 /* Moya */,
 				C248FB202B40C57B00AD7244 /* GoogleSignIn */,
+				C23654232B448536008A742D /* JGProgressHUD */,
 			);
 			productName = VocabGem;
 			productReference = C26554552B3C3A6D003B083B /* VocabGem.app */;
@@ -444,6 +447,7 @@
 				C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */,
 				C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = C26554562B3C3A6D003B083B /* Products */;
 			projectDirPath = "";
@@ -861,6 +865,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -888,6 +900,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C23654232B448536008A742D /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		C248FB0F2B3F649600AD7244 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */;

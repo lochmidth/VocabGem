@@ -38,8 +38,12 @@ class TabBarController: UITabBarController {
     
     @objc func handleSignOut() {
         let alert = UIAlertController(title: nil, message: "Are you sure you want to sign out?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
-            self.viewModel.handleSignOut()
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { [weak self] _ in
+            Task {
+                self?.showLoader(true)
+                await self?.viewModel.handleSignOut()
+                self?.showLoader(false)
+            }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.present(alert, animated: true)

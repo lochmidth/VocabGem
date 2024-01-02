@@ -101,21 +101,28 @@ class LoginController: UIViewController {
     //MARK: - Actions
     
     @objc func handleShowRegister() {
-        viewModel.handleShowRegister()
+        showLoader(true)
+        Task {
+            await viewModel.handleShowRegister()
+            showLoader(false)
+        }
     }
     
     @objc func handleLogin() {
+        showLoader(true)
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        
         Task {
             await viewModel.handleLogin(email: email, password: password)
+            showLoader(false)
         }
     }
     
     @objc func handleLoginWithGoogle() {
+        showLoader(true)
         Task {
             await viewModel.handleLoginWithGoogle()
+            showLoader(false)
         }
     }
     

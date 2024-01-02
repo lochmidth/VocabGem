@@ -35,22 +35,22 @@ class GoogleService: GoogleServicing {
               let window = windowScene.windows.first,
               let rootViewController = window.rootViewController else { throw GoogleError.ViewError }
         
-            let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
-            let user = userAuthentication.user
-            guard let idToken = user.idToken else { throw GoogleError.invalidIdToken}
-            let accessToken = user.accessToken
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
-            let result = try await Auth.auth().signIn(with: credential)
-            let uid = result.user.uid
-            
-            let dictionary = ["email": result.user.email,
-                              "fullname": result.user.displayName,
-                              "username": result.user.displayName]
-            
-            try await REF_USERS.child(uid).updateChildValues(dictionary as [AnyHashable : Any])
-            
-            let fetchedUser = User(uid: uid, dictionary: dictionary as [String : Any])
-            return fetchedUser
+        let userAuthentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+        let user = userAuthentication.user
+        guard let idToken = user.idToken else { throw GoogleError.invalidIdToken}
+        let accessToken = user.accessToken
+        let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+        let result = try await Auth.auth().signIn(with: credential)
+        let uid = result.user.uid
+        
+        let dictionary = ["email": result.user.email,
+                          "fullname": result.user.displayName,
+                          "username": result.user.displayName]
+        
+        try await REF_USERS.child(uid).updateChildValues(dictionary as [AnyHashable : Any])
+        
+        let fetchedUser = User(uid: uid, dictionary: dictionary as [String : Any])
+        return fetchedUser
     }
     
     //    func signInWithGoogle() async throws -> User {

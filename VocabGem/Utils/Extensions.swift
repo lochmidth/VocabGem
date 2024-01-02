@@ -8,6 +8,7 @@
 
 
 import UIKit
+import JGProgressHUD
 
 extension UIColor {
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
@@ -23,7 +24,18 @@ extension UIColor {
 
 extension UIViewController {
     
-   
+    static let hud = JGProgressHUD(style: .dark)
+    
+    func showLoader(_ show: Bool) {
+        DispatchQueue.main.async {
+            self.showLoader(false)
+        }
+        if show {
+            UIViewController.hud.show(in: view)
+        } else {
+            UIViewController.hud.dismiss()
+        }
+    }
 }
 
 //extension URL {

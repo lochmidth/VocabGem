@@ -70,9 +70,8 @@ class HomeController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         Task {
-            try await viewModel.fetchRecentWords()
+            await viewModel.fetchRecentWords()
             configureClearButton()
             tableView.reloadData()
         }
@@ -94,10 +93,12 @@ class HomeController: UIViewController {
     //MARK: - Actions
     
     @objc func didTapClearRecentWords() {
+        showLoader(true)
         Task {
-            try await viewModel.clearRecentWords()
+            await viewModel.clearRecentWords()
             tableView.reloadData()
             configureClearButton()
+            showLoader(false)
         }
     }
     
@@ -154,7 +155,7 @@ extension HomeController: UISearchBarDelegate {
         
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { [weak self] _ in
             Task {
-                try await self?.viewModel.searchWords(letterPattern: searchText)
+                await self?.viewModel.searchWords(letterPattern: searchText)
                 self?.tableView.reloadData()
             }
         })
@@ -189,8 +190,10 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showLoader(true)
         Task {
             await viewModel.didSelectRowAt(index: indexPath.item)
+            showLoader(false)
         }
     }
     

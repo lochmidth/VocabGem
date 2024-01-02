@@ -53,7 +53,7 @@ class HomeViewModel {
     private func getWordDetails(word: String) async {
         do {
             self.wordDetail = try await wordsService.getWordDetails(word: word)
-            try await saveToRecents(word: word)
+            await saveToRecents(word: word)
             guard let wordDetail = wordDetail else { return }
             await self.coordinator?.goToWord(word: wordDetail)
         } catch {

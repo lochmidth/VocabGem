@@ -22,14 +22,12 @@ class TabBarViewModel {
     
     //MARK: - Helpers
     
-    func handleSignOut() {
-        Task {
-            do {
-                try Auth.auth().signOut()
-                await coordinator?.signOut()
-            } catch {
-                await coordinator?.showMessage(withTitle: "Oops!", message: "Error While signing the user out, \(error.localizedDescription)")
-            }
+    func handleSignOut() async {
+        do {
+            try Auth.auth().signOut()
+            await coordinator?.signOut()
+        } catch {
+            await coordinator?.showMessage(withTitle: "Oops!", message: "Error While signing the user out, \(error.localizedDescription)")
         }
     }
 }
