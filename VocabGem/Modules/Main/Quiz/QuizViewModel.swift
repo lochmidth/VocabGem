@@ -9,7 +9,7 @@ import UIKit
 
 class QuizViewModel {
     weak var coordinator: TabBarCoordinator?
-    let quizManager: QuizManager
+    let quizManager: QuizManaging
     var user: User
     var score: Int
     
@@ -17,7 +17,7 @@ class QuizViewModel {
         "Score: \(score)"
     }
     
-    init(user: User, quizManager: QuizManager = QuizManager()) {
+    init(user: User, quizManager: QuizManaging = QuizManager()) {
         self.user = user
         self.quizManager = quizManager
         self.score = user.score

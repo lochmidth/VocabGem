@@ -12,11 +12,11 @@ class TabBarViewModel {
     //MARK: - Properties
     
     weak var coordinator: TabBarCoordinating?
-    let userService: UserService
+    let userService: UserServicing
     
     //MARK: - Lifecycle
     
-    init(userService: UserService = UserService()) {
+    init(userService: UserServicing = UserService()) {
         self.userService = userService
     }
     

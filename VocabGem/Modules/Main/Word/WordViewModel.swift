@@ -13,7 +13,7 @@ class WordViewModel {
     //MARK: - Properties
     
     let synthesizer: AVSpeechSynthesizer
-    weak var coordinator: TabBarCoordinator?
+    weak var coordinator: TabBarCoordinating?
     let word: Word
     
     var wordText: String {

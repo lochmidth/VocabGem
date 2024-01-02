@@ -13,7 +13,15 @@ enum WordsError: Error {
     case invalidUid
 }
 
-class WordsService {
+protocol WordsServicing {
+    func searchWords(letterPattern: String) async throws -> Words
+    func getWordDetails(word: String) async throws -> Word
+    func fetchRecentWords() async throws -> [String]
+    func saveToRecents(word: String) async throws
+    func clearRecentWords() async throws
+}
+
+class WordsService: WordsServicing {
     let networkManager: NetworkManager
     
     init(networkManager: NetworkManager = NetworkManager()) {

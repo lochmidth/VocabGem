@@ -10,11 +10,11 @@ import Foundation
 class LoginViewModel {
     
     weak var coordinator: AuthCoordinating?
-    let authService: AuthService
-    let userService: UserService
+    let authService: AuthServicing
+    let userService: UserServicing
     let googleService: GoogleServicing
     
-    init(authService: AuthService = AuthService(), userService: UserService = UserService(), googleService: GoogleServicing = GoogleService()) {
+    init(authService: AuthServicing = AuthService(), userService: UserServicing = UserService(), googleService: GoogleServicing = GoogleService()) {
         self.authService = authService
         self.userService = userService
         self.googleService = googleService

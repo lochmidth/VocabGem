@@ -9,9 +9,9 @@ import Foundation
 
 class SplashViewModel {
     weak var coordinator: AppCoordinator?
-    let userService: UserService
+    let userService: UserServicing
     
-    init(userService: UserService = UserService()) {
+    init(userService: UserServicing = UserService()) {
         self.userService = userService
     }
     

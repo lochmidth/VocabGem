@@ -20,7 +20,12 @@ struct AuthCredentials {
     let username: String
 }
 
-class AuthService {
+protocol AuthServicing {
+    func login(withEmail email: String, password: String) async throws
+    func register(withCredentials credentials: AuthCredentials) async throws
+}
+
+class AuthService: AuthServicing {
     
     let auth: Auth
     

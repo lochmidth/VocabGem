@@ -13,7 +13,12 @@ enum UserError: Error {
     case fetchingError
 }
 
-class UserService {
+protocol UserServicing {
+    func checkIfUserIsLoggedIn() -> Bool
+    func fetchUser() async throws -> User
+}
+
+class UserService: UserServicing {
     
     func checkIfUserIsLoggedIn() -> Bool {
         if Auth.auth().currentUser == nil {
@@ -30,13 +35,4 @@ class UserService {
         let user = User(uid: uid, dictionary: dictionary as! [String : Any])
         return user
     }
-    
-//    func fetchUser(completion: @escaping(User) -> Void) {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        REF_USERS.child(uid).observeSingleEvent(of: .value) { snapshot, error in
-//            guard let dictionary = snapshot.value else { return }
-//            let user = User(uid: uid, dictionary: dictionary as! [String : Any])
-//            completion(user)
-//        }
-//    }
 }

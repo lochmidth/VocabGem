@@ -14,7 +14,17 @@ enum QuizError: Error {
     case updateError
 }
 
-class QuizManager {
+protocol QuizManaging {
+    var questions: [Quiz] { get set }
+    var index: Int { get set }
+    func submitAnswer(atIndex index: Int) -> Bool
+    func moveToNextQuestion()
+    func resetQuiz()
+    func fetchQuizes() async throws
+    func updateScore(score: Int) async throws
+}
+
+class QuizManager: QuizManaging {
     var questions: [Quiz] = []
     var index = 0
     

@@ -7,10 +7,10 @@
 
 class RegisterViewModel {
     weak var coordinator: AuthCoordinator?
-    let authService: AuthService
-    let userService: UserService
+    let authService: AuthServicing
+    let userService: UserServicing
     
-    init(authService: AuthService = AuthService(), userService: UserService = UserService()) {
+    init(authService: AuthServicing = AuthService(), userService: UserServicing = UserService()) {
         self.authService = authService
         self.userService = userService
     }
