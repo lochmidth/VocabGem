@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2261CC02B44CEC2003EADCF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CBF2B44CEC2003EADCF /* FirebaseAuth */; };
+		C2261CC22B44CEC7003EADCF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CC12B44CEC7003EADCF /* FirebaseDatabase */; };
+		C2261CC42B44CECB003EADCF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CC32B44CECB003EADCF /* GoogleSignIn */; };
+		C2261CC62B44CECF003EADCF /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CC52B44CECF003EADCF /* JGProgressHUD */; };
+		C2261CCC2B44CFD2003EADCF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2261CCB2B44CFD2003EADCF /* Models.swift */; };
 		C23654242B448536008A742D /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C23654232B448536008A742D /* JGProgressHUD */; };
 		C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE32B3C66A100AD7244 /* Constants.swift */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
@@ -38,7 +43,6 @@
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
 		C26554652B3C3A6F003B083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26554642B3C3A6F003B083B /* Assets.xcassets */; };
 		C26554682B3C3A6F003B083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26554662B3C3A6F003B083B /* LaunchScreen.storyboard */; };
-		C26554732B3C3A6F003B083B /* VocabGemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554722B3C3A6F003B083B /* VocabGemTests.swift */; };
 		C265547D2B3C3A6F003B083B /* VocabGemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265547C2B3C3A6F003B083B /* VocabGemUITests.swift */; };
 		C265547F2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265547E2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift */; };
 		C26554952B3C3B1C003B083B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554942B3C3B1C003B083B /* Extensions.swift */; };
@@ -74,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2261CCB2B44CFD2003EADCF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		C248FAE32B3C66A100AD7244 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C248FAE92B3DD75D00AD7244 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C248FAEB2B3DD80D00AD7244 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -105,7 +110,6 @@
 		C26554672B3C3A6F003B083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C26554692B3C3A6F003B083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C265546E2B3C3A6F003B083B /* VocabGemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocabGemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C26554722B3C3A6F003B083B /* VocabGemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemTests.swift; sourceTree = "<group>"; };
 		C26554782B3C3A6F003B083B /* VocabGemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocabGemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C265547C2B3C3A6F003B083B /* VocabGemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemUITests.swift; sourceTree = "<group>"; };
 		C265547E2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -139,6 +143,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2261CC62B44CECF003EADCF /* JGProgressHUD in Frameworks */,
+				C2261CC22B44CEC7003EADCF /* FirebaseDatabase in Frameworks */,
+				C2261CC02B44CEC2003EADCF /* FirebaseAuth in Frameworks */,
+				C2261CC42B44CECB003EADCF /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +160,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2261CBE2B44CEC2003EADCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2261CC72B44CFB8003EADCF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C2261CC92B44CFC2003EADCF /* Models */,
+				C2261CC82B44CFBD003EADCF /* Services */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C2261CC82B44CFBD003EADCF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2261CC92B44CFC2003EADCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2261CCB2B44CFD2003EADCF /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C248FAEF2B3E25B800AD7244 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +234,7 @@
 				C26554712B3C3A6F003B083B /* VocabGemTests */,
 				C265547B2B3C3A6F003B083B /* VocabGemUITests */,
 				C26554562B3C3A6D003B083B /* Products */,
+				C2261CBE2B44CEC2003EADCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				C26554932B3C3AD8003B083B /* Model */,
-				C26554922B3C3AD7003B083B /* View */,
 				C26554912B3C3AD6003B083B /* Coordinators */,
 				C26554902B3C3AD5003B083B /* Modules */,
 				C265548F2B3C3AD4003B083B /* Services */,
@@ -231,7 +270,7 @@
 		C26554712B3C3A6F003B083B /* VocabGemTests */ = {
 			isa = PBXGroup;
 			children = (
-				C26554722B3C3A6F003B083B /* VocabGemTests.swift */,
+				C2261CC72B44CFB8003EADCF /* Mocks */,
 			);
 			path = VocabGemTests;
 			sourceTree = "<group>";
@@ -287,13 +326,6 @@
 				C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		C26554922B3C3AD7003B083B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C26554932B3C3AD8003B083B /* Model */ = {
@@ -389,6 +421,12 @@
 				C26554702B3C3A6F003B083B /* PBXTargetDependency */,
 			);
 			name = VocabGemTests;
+			packageProductDependencies = (
+				C2261CBF2B44CEC2003EADCF /* FirebaseAuth */,
+				C2261CC12B44CEC7003EADCF /* FirebaseDatabase */,
+				C2261CC32B44CECB003EADCF /* GoogleSignIn */,
+				C2261CC52B44CECF003EADCF /* JGProgressHUD */,
+			);
 			productName = VocabGemTests;
 			productReference = C265546E2B3C3A6F003B083B /* VocabGemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -426,6 +464,7 @@
 					};
 					C265546D2B3C3A6F003B083B = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = C26554542B3C3A6D003B083B;
 					};
 					C26554772B3C3A6F003B083B = {
@@ -533,7 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C26554732B3C3A6F003B083B /* VocabGemTests.swift in Sources */,
+				C2261CCC2B44CFD2003EADCF /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +791,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Y92LH56N8;
@@ -761,6 +801,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alphanogn.VocabGemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "VocabGemTests/Mocks/Models/VocabGemTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VocabGem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VocabGem";
@@ -772,6 +814,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Y92LH56N8;
@@ -781,6 +824,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alphanogn.VocabGemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "VocabGemTests/Mocks/Models/VocabGemTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VocabGem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VocabGem";
@@ -900,6 +944,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C2261CBF2B44CEC2003EADCF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C2261CC12B44CEC7003EADCF /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		C2261CC32B44CECB003EADCF /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		C2261CC52B44CECF003EADCF /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		C23654232B448536008A742D /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */;

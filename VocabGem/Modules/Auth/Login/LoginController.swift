@@ -18,7 +18,7 @@ class LoginController: UIViewController {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.setDimensions(height: 150, width: 150)
-        iv.image = UIImage(named: "GitHub_logo")
+        iv.image = UIImage(named: "VocabGem")
         return iv
     }()
     
