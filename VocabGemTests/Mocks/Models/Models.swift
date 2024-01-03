@@ -47,13 +47,21 @@ let mockWord: Word = {
 
 //MARK: - Quiz
 
-let mockQuizDictionary: [String: Any] = [
+let mockQuizDictionary1: [String: Any] = [
     "question": "What is the capital of France?",
     "answers": ["Berlin", "Paris", "London"],
     "correctAnswerIndex": 1
 ]
 
-let mockQuiz = Quiz(dictionary: mockQuizDictionary)
+let mockQuizDictionary2: [String: Any] = [
+    "question": "Which planet is known as the Red Planet?",
+    "answers": ["Earth", "Mars", "Jupiter"],
+    "correctAnswerIndex": 1
+]
+
+
+let mockQuiz1 = Quiz(dictionary: mockQuizDictionary1)
+let mockQuiz2 = Quiz(dictionary: mockQuizDictionary2)
 
 
 

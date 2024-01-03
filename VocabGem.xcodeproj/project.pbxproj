@@ -26,6 +26,8 @@
 		C231156D2B45C84E0015CFC5 /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */; };
 		C231156F2B45C9360015CFC5 /* MockAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231156E2B45C9360015CFC5 /* MockAuth.swift */; };
 		C23115732B45DD9F0015CFC5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */; };
+		C23115752B4602A40015CFC5 /* QuizViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115742B4602A40015CFC5 /* QuizViewModelTests.swift */; };
+		C23115772B4609030015CFC5 /* WordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115762B4609030015CFC5 /* WordViewModelTests.swift */; };
 		C23654242B448536008A742D /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C23654232B448536008A742D /* JGProgressHUD */; };
 		C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE32B3C66A100AD7244 /* Constants.swift */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
@@ -108,6 +110,8 @@
 		C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
 		C231156E2B45C9360015CFC5 /* MockAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuth.swift; sourceTree = "<group>"; };
 		C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		C23115742B4602A40015CFC5 /* QuizViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModelTests.swift; sourceTree = "<group>"; };
+		C23115762B4609030015CFC5 /* WordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModelTests.swift; sourceTree = "<group>"; };
 		C248FAE32B3C66A100AD7244 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C248FAE92B3DD75D00AD7244 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C248FAEB2B3DD80D00AD7244 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 		C23115552B45A4520015CFC5 /* Word */ = {
 			isa = PBXGroup;
 			children = (
+				C23115762B4609030015CFC5 /* WordViewModelTests.swift */,
 			);
 			path = Word;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 		C23115562B45A45B0015CFC5 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				C23115742B4602A40015CFC5 /* QuizViewModelTests.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -696,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C23115772B4609030015CFC5 /* WordViewModelTests.swift in Sources */,
 				C23115442B44D9CC0015CFC5 /* MockUserService.swift in Sources */,
 				C23115642B45B07D0015CFC5 /* MockTabBarCoordinator.swift in Sources */,
 				C23115462B4576B20015CFC5 /* MockAuthService.swift in Sources */,
@@ -707,6 +714,7 @@
 				C2261CCC2B44CFD2003EADCF /* Models.swift in Sources */,
 				C23115482B457A100015CFC5 /* MockNetworkManager.swift in Sources */,
 				C231156F2B45C9360015CFC5 /* MockAuth.swift in Sources */,
+				C23115752B4602A40015CFC5 /* QuizViewModelTests.swift in Sources */,
 				C23115622B45AF8E0015CFC5 /* MockAuthCoordinator.swift in Sources */,
 				C231154E2B457E590015CFC5 /* MockQuizManager.swift in Sources */,
 				C231154A2B457A7A0015CFC5 /* MockWordsService.swift in Sources */,

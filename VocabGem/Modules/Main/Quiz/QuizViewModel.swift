@@ -8,7 +8,7 @@
 import UIKit
 
 class QuizViewModel {
-    weak var coordinator: TabBarCoordinator?
+    weak var coordinator: TabBarCoordinating?
     let quizManager: QuizManaging
     var user: User
     var score: Int
@@ -36,7 +36,7 @@ class QuizViewModel {
         }
     }
     
-    private func updateScore() async {
+    func updateScore() async {
         do {
             try await quizManager.updateScore(score: score)
         } catch {
