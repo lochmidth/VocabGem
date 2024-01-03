@@ -30,7 +30,7 @@ let mockWords: Words = {
 //MARK: - Word
 
 let mockWord: Word = {
-    let mockResult = Result(
+    let mockResult = WordResult(
         definition: "The round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh.",
         partOfSpeech: "Noun",
         synonyms: ["Fruit", "Pomaceous fruit"],
@@ -42,13 +42,13 @@ let mockWord: Word = {
 
 //MARK: - Quiz
 
-let mockQuiz: Quiz = {
-    let question = "What is the capital of France?"
-    let choices = ["Berlin", "Madrid", "Paris"]
-    let correctAnswerIndex = 2
-    
-    return Quiz(question: question, choices: choices, correctAnswerIndex: correctAnswerIndex)
-}()
+let mockQuizDictionary: [String: Any] = [
+    "question": "What is the capital of France?",
+    "answers": ["Berlin", "Paris", "London"],
+    "correctAnswerIndex": 1
+]
+
+let mockQuiz = Quiz(dictionary: mockQuizDictionary)
 
 
 

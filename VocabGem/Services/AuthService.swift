@@ -38,7 +38,7 @@ class AuthService: AuthServicing {
     }
     
     func register(withCredentials credentials: AuthCredentials) async throws {
-        let result = try await Auth.auth().createUser(withEmail: credentials.email, password: credentials.password)
+        let result = try await auth.createUser(withEmail: credentials.email, password: credentials.password)
         let uid = result.user.uid
         
         let values = ["email": credentials.email,

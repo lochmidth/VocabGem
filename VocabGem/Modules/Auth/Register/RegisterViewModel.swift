@@ -6,7 +6,7 @@
 //
 
 class RegisterViewModel {
-    weak var coordinator: AuthCoordinator?
+    weak var coordinator: AuthCoordinating?
     let authService: AuthServicing
     let userService: UserServicing
     

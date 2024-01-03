@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "120A9632-52AE-481C-8ED8-AB21605DFA61",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VocabGem.xcodeproj",
+      "identifier" : "C26554542B3C3A6D003B083B",
+      "name" : "VocabGem"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:VocabGem.xcodeproj",
+        "identifier" : "C265546D2B3C3A6F003B083B",
+        "name" : "VocabGemTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:VocabGem.xcodeproj",
+        "identifier" : "C26554772B3C3A6F003B083B",
+        "name" : "VocabGemUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

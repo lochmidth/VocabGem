@@ -35,7 +35,7 @@ class AppCoordinator: Coordinator {
         goToSplash()
     }
     
-    private func goToSplash() {
+    func goToSplash() {
         let splashViewModel = SplashViewModel()
         splashViewModel.coordinator = self
         let splashController = SplashController(viewModel: splashViewModel)
