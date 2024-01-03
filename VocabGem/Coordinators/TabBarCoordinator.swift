@@ -11,7 +11,7 @@ import UIKit
 protocol TabBarCoordinating: Coordinator {
     func configureTabBarController()
     func goToWord(word: Word)
-    func signOut()
+    func signOut() async throws
 }
 
 class TabBarCoordinator: TabBarCoordinating {
@@ -59,9 +59,11 @@ class TabBarCoordinator: TabBarCoordinating {
         navigationController.pushViewController(wordController, animated: true)
     }
     
-    func signOut() {
-        navigationController.popToRootViewController(animated: true)
-        parentCoordinator?.childDidFinish(self)
+    func signOut() async throws {
+        Task {
+            navigationController.popToRootViewController(animated: true)
+            parentCoordinator?.childDidFinish(self)
+        }
     }
     
     

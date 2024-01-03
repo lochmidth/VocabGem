@@ -10,13 +10,20 @@ import Foundation
 // MARK: - Word
 struct Word: Codable {
     let word: String
-    let results: [Result]
+    let results: [WordResult]
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct WordResult: Codable {
     let definition: String?
     let partOfSpeech: String?
     let synonyms: [String]?
     let examples: [String]?
+}
+
+enum CodingKeys: String, CodingKey {
+case definition
+case partOfSpeech
+case synonyms
+case examples
 }

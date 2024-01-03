@@ -20,7 +20,12 @@ struct AuthCredentials {
     let username: String
 }
 
-class AuthService {
+protocol AuthServicing {
+    func login(withEmail email: String, password: String) async throws
+    func register(withCredentials credentials: AuthCredentials) async throws
+}
+
+class AuthService: AuthServicing {
     
     let auth: Auth
     
@@ -33,7 +38,7 @@ class AuthService {
     }
     
     func register(withCredentials credentials: AuthCredentials) async throws {
-        let result = try await Auth.auth().createUser(withEmail: credentials.email, password: credentials.password)
+        let result = try await auth.createUser(withEmail: credentials.email, password: credentials.password)
         let uid = result.user.uid
         
         let values = ["email": credentials.email,

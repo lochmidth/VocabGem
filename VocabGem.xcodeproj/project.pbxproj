@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2261CC02B44CEC2003EADCF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CBF2B44CEC2003EADCF /* FirebaseAuth */; };
+		C2261CC22B44CEC7003EADCF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CC12B44CEC7003EADCF /* FirebaseDatabase */; };
+		C2261CC42B44CECB003EADCF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CC32B44CECB003EADCF /* GoogleSignIn */; };
+		C2261CC62B44CECF003EADCF /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C2261CC52B44CECF003EADCF /* JGProgressHUD */; };
+		C2261CCC2B44CFD2003EADCF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2261CCB2B44CFD2003EADCF /* Models.swift */; };
+		C23115442B44D9CC0015CFC5 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115432B44D9CC0015CFC5 /* MockUserService.swift */; };
+		C23115462B4576B20015CFC5 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115452B4576B20015CFC5 /* MockAuthService.swift */; };
+		C23115482B457A100015CFC5 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115472B457A100015CFC5 /* MockNetworkManager.swift */; };
+		C231154A2B457A7A0015CFC5 /* MockWordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115492B457A7A0015CFC5 /* MockWordsService.swift */; };
+		C231154C2B457D990015CFC5 /* MockGoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231154B2B457D990015CFC5 /* MockGoogleService.swift */; };
+		C231154E2B457E590015CFC5 /* MockQuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231154D2B457E590015CFC5 /* MockQuizManager.swift */; };
+		C23115522B4581F60015CFC5 /* SplashViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115512B4581F60015CFC5 /* SplashViewModelTests.swift */; };
+		C231155D2B45A4A30015CFC5 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231155C2B45A4A30015CFC5 /* LoginViewModelTests.swift */; };
+		C23115622B45AF8E0015CFC5 /* MockAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115612B45AF8E0015CFC5 /* MockAuthCoordinator.swift */; };
+		C23115642B45B07D0015CFC5 /* MockTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115632B45B07D0015CFC5 /* MockTabBarCoordinator.swift */; };
+		C23115682B45C5020015CFC5 /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115672B45C5020015CFC5 /* RegisterViewModelTests.swift */; };
+		C231156D2B45C84E0015CFC5 /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */; };
+		C231156F2B45C9360015CFC5 /* MockAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231156E2B45C9360015CFC5 /* MockAuth.swift */; };
+		C23115732B45DD9F0015CFC5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */; };
+		C23115752B4602A40015CFC5 /* QuizViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115742B4602A40015CFC5 /* QuizViewModelTests.swift */; };
+		C23115772B4609030015CFC5 /* WordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115762B4609030015CFC5 /* WordViewModelTests.swift */; };
 		C23654242B448536008A742D /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C23654232B448536008A742D /* JGProgressHUD */; };
 		C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE32B3C66A100AD7244 /* Constants.swift */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
@@ -38,7 +59,6 @@
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
 		C26554652B3C3A6F003B083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26554642B3C3A6F003B083B /* Assets.xcassets */; };
 		C26554682B3C3A6F003B083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26554662B3C3A6F003B083B /* LaunchScreen.storyboard */; };
-		C26554732B3C3A6F003B083B /* VocabGemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554722B3C3A6F003B083B /* VocabGemTests.swift */; };
 		C265547D2B3C3A6F003B083B /* VocabGemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265547C2B3C3A6F003B083B /* VocabGemUITests.swift */; };
 		C265547F2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265547E2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift */; };
 		C26554952B3C3B1C003B083B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554942B3C3B1C003B083B /* Extensions.swift */; };
@@ -74,6 +94,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2261CCB2B44CFD2003EADCF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C231153F2B44D7DB0015CFC5 /* VocabGemTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabGemTests.xctestplan; sourceTree = SOURCE_ROOT; };
+		C23115432B44D9CC0015CFC5 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
+		C23115452B4576B20015CFC5 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
+		C23115472B457A100015CFC5 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		C23115492B457A7A0015CFC5 /* MockWordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWordsService.swift; sourceTree = "<group>"; };
+		C231154B2B457D990015CFC5 /* MockGoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGoogleService.swift; sourceTree = "<group>"; };
+		C231154D2B457E590015CFC5 /* MockQuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQuizManager.swift; sourceTree = "<group>"; };
+		C23115512B4581F60015CFC5 /* SplashViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModelTests.swift; sourceTree = "<group>"; };
+		C231155C2B45A4A30015CFC5 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		C23115612B45AF8E0015CFC5 /* MockAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthCoordinator.swift; sourceTree = "<group>"; };
+		C23115632B45B07D0015CFC5 /* MockTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarCoordinator.swift; sourceTree = "<group>"; };
+		C23115672B45C5020015CFC5 /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
+		C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
+		C231156E2B45C9360015CFC5 /* MockAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuth.swift; sourceTree = "<group>"; };
+		C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		C23115742B4602A40015CFC5 /* QuizViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModelTests.swift; sourceTree = "<group>"; };
+		C23115762B4609030015CFC5 /* WordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModelTests.swift; sourceTree = "<group>"; };
 		C248FAE32B3C66A100AD7244 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C248FAE92B3DD75D00AD7244 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C248FAEB2B3DD80D00AD7244 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -105,7 +143,6 @@
 		C26554672B3C3A6F003B083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C26554692B3C3A6F003B083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C265546E2B3C3A6F003B083B /* VocabGemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocabGemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C26554722B3C3A6F003B083B /* VocabGemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemTests.swift; sourceTree = "<group>"; };
 		C26554782B3C3A6F003B083B /* VocabGemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocabGemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C265547C2B3C3A6F003B083B /* VocabGemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemUITests.swift; sourceTree = "<group>"; };
 		C265547E2B3C3A6F003B083B /* VocabGemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabGemUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -139,6 +176,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2261CC62B44CECF003EADCF /* JGProgressHUD in Frameworks */,
+				C2261CC22B44CEC7003EADCF /* FirebaseDatabase in Frameworks */,
+				C2261CC02B44CEC2003EADCF /* FirebaseAuth in Frameworks */,
+				C2261CC42B44CECB003EADCF /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +193,132 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2261CBE2B44CEC2003EADCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2261CC72B44CFB8003EADCF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C2261CC92B44CFC2003EADCF /* Models */,
+				C231155E2B45AEEF0015CFC5 /* Coordinators */,
+				C23115422B44D9BE0015CFC5 /* Services */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C2261CC92B44CFC2003EADCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2261CCB2B44CFD2003EADCF /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C23115422B44D9BE0015CFC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C23115452B4576B20015CFC5 /* MockAuthService.swift */,
+				C23115432B44D9CC0015CFC5 /* MockUserService.swift */,
+				C23115472B457A100015CFC5 /* MockNetworkManager.swift */,
+				C23115492B457A7A0015CFC5 /* MockWordsService.swift */,
+				C231154B2B457D990015CFC5 /* MockGoogleService.swift */,
+				C231154D2B457E590015CFC5 /* MockQuizManager.swift */,
+				C231156E2B45C9360015CFC5 /* MockAuth.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C231154F2B4581E30015CFC5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C23115502B4581E90015CFC5 /* Splash */,
+				C23115592B45A47D0015CFC5 /* Auth */,
+				C23115582B45A46D0015CFC5 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C23115502B4581E90015CFC5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				C23115512B4581F60015CFC5 /* SplashViewModelTests.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		C23115552B45A4520015CFC5 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				C23115762B4609030015CFC5 /* WordViewModelTests.swift */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		C23115562B45A45B0015CFC5 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				C23115742B4602A40015CFC5 /* QuizViewModelTests.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		C23115572B45A45F0015CFC5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C23115582B45A46D0015CFC5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */,
+				C23115572B45A45F0015CFC5 /* Home */,
+				C23115562B45A45B0015CFC5 /* Quiz */,
+				C23115552B45A4520015CFC5 /* Word */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C23115592B45A47D0015CFC5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C231155B2B45A4840015CFC5 /* Login */,
+				C231155A2B45A4820015CFC5 /* Register */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C231155A2B45A4820015CFC5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C23115672B45C5020015CFC5 /* RegisterViewModelTests.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		C231155B2B45A4840015CFC5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C231155C2B45A4A30015CFC5 /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C231155E2B45AEEF0015CFC5 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C23115612B45AF8E0015CFC5 /* MockAuthCoordinator.swift */,
+				C23115632B45B07D0015CFC5 /* MockTabBarCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		C248FAEF2B3E25B800AD7244 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +362,7 @@
 				C26554712B3C3A6F003B083B /* VocabGemTests */,
 				C265547B2B3C3A6F003B083B /* VocabGemUITests */,
 				C26554562B3C3A6D003B083B /* Products */,
+				C2261CBE2B44CEC2003EADCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				C26554932B3C3AD8003B083B /* Model */,
-				C26554922B3C3AD7003B083B /* View */,
 				C26554912B3C3AD6003B083B /* Coordinators */,
 				C26554902B3C3AD5003B083B /* Modules */,
 				C265548F2B3C3AD4003B083B /* Services */,
@@ -231,7 +398,9 @@
 		C26554712B3C3A6F003B083B /* VocabGemTests */ = {
 			isa = PBXGroup;
 			children = (
-				C26554722B3C3A6F003B083B /* VocabGemTests.swift */,
+				C231153F2B44D7DB0015CFC5 /* VocabGemTests.xctestplan */,
+				C2261CC72B44CFB8003EADCF /* Mocks */,
+				C231154F2B4581E30015CFC5 /* Modules */,
 			);
 			path = VocabGemTests;
 			sourceTree = "<group>";
@@ -287,13 +456,6 @@
 				C248FAED2B3E1B0B00AD7244 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		C26554922B3C3AD7003B083B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C26554932B3C3AD8003B083B /* Model */ = {
@@ -389,6 +551,12 @@
 				C26554702B3C3A6F003B083B /* PBXTargetDependency */,
 			);
 			name = VocabGemTests;
+			packageProductDependencies = (
+				C2261CBF2B44CEC2003EADCF /* FirebaseAuth */,
+				C2261CC12B44CEC7003EADCF /* FirebaseDatabase */,
+				C2261CC32B44CECB003EADCF /* GoogleSignIn */,
+				C2261CC52B44CECF003EADCF /* JGProgressHUD */,
+			);
 			productName = VocabGemTests;
 			productReference = C265546E2B3C3A6F003B083B /* VocabGemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -426,6 +594,7 @@
 					};
 					C265546D2B3C3A6F003B083B = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = C26554542B3C3A6D003B083B;
 					};
 					C26554772B3C3A6F003B083B = {
@@ -533,7 +702,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C26554732B3C3A6F003B083B /* VocabGemTests.swift in Sources */,
+				C23115772B4609030015CFC5 /* WordViewModelTests.swift in Sources */,
+				C23115442B44D9CC0015CFC5 /* MockUserService.swift in Sources */,
+				C23115642B45B07D0015CFC5 /* MockTabBarCoordinator.swift in Sources */,
+				C23115462B4576B20015CFC5 /* MockAuthService.swift in Sources */,
+				C231156D2B45C84E0015CFC5 /* TabBarViewModelTests.swift in Sources */,
+				C23115682B45C5020015CFC5 /* RegisterViewModelTests.swift in Sources */,
+				C23115732B45DD9F0015CFC5 /* HomeViewModelTests.swift in Sources */,
+				C231154C2B457D990015CFC5 /* MockGoogleService.swift in Sources */,
+				C231155D2B45A4A30015CFC5 /* LoginViewModelTests.swift in Sources */,
+				C2261CCC2B44CFD2003EADCF /* Models.swift in Sources */,
+				C23115482B457A100015CFC5 /* MockNetworkManager.swift in Sources */,
+				C231156F2B45C9360015CFC5 /* MockAuth.swift in Sources */,
+				C23115752B4602A40015CFC5 /* QuizViewModelTests.swift in Sources */,
+				C23115622B45AF8E0015CFC5 /* MockAuthCoordinator.swift in Sources */,
+				C231154E2B457E590015CFC5 /* MockQuizManager.swift in Sources */,
+				C231154A2B457A7A0015CFC5 /* MockWordsService.swift in Sources */,
+				C23115522B4581F60015CFC5 /* SplashViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +937,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Y92LH56N8;
@@ -761,6 +947,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alphanogn.VocabGemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VocabGem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VocabGem";
@@ -772,6 +960,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Y92LH56N8;
@@ -781,6 +970,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alphanogn.VocabGemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VocabGem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VocabGem";
@@ -900,6 +1090,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C2261CBF2B44CEC2003EADCF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C2261CC12B44CEC7003EADCF /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		C2261CC32B44CECB003EADCF /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		C2261CC52B44CECF003EADCF /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		C23654232B448536008A742D /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C23654222B448536008A742D /* XCRemoteSwiftPackageReference "JGProgressHUD" */;

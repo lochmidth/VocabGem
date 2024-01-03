@@ -13,10 +13,25 @@ enum UserError: Error {
     case fetchingError
 }
 
-class UserService {
+protocol UserServicing {
+    func checkIfUserIsLoggedIn() -> Bool
+    func fetchUser() async throws -> User
+}
+
+protocol AuthProtocol: AnyObject {
+    func signOut() throws
+}
+
+class UserService: UserServicing {
+    
+    let auth: Auth
+    
+    init(auth: Auth = Auth.auth()) {
+        self.auth = auth
+    }
     
     func checkIfUserIsLoggedIn() -> Bool {
-        if Auth.auth().currentUser == nil {
+        if auth.currentUser == nil {
             return false
         } else {
             return true
@@ -24,19 +39,10 @@ class UserService {
     }
     
     func fetchUser() async throws -> User {
-        guard let uid = Auth.auth().currentUser?.uid else { throw UserError.fetchingError }
+        guard let uid = auth.currentUser?.uid else { throw UserError.fetchingError }
         let (snapshot, _) = await REF_USERS.child(uid).observeSingleEventAndPreviousSiblingKey(of: .value)
         guard let dictionary = snapshot.value else { throw UserError.fetchingError }
         let user = User(uid: uid, dictionary: dictionary as! [String : Any])
         return user
     }
-    
-//    func fetchUser(completion: @escaping(User) -> Void) {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        REF_USERS.child(uid).observeSingleEvent(of: .value) { snapshot, error in
-//            guard let dictionary = snapshot.value else { return }
-//            let user = User(uid: uid, dictionary: dictionary as! [String : Any])
-//            completion(user)
-//        }
-//    }
 }

@@ -10,9 +10,9 @@ import Foundation
 class HomeViewModel {
     //MARK: - Properties
     
-    weak var coordinator: TabBarCoordinator?
-    let userService: UserService
-    let wordsService: WordsService
+    weak var coordinator: TabBarCoordinating?
+    let userService: UserServicing
+    let wordsService: WordsServicing
     var user: User
     var wordDetail: Word?
     var words: Words?
@@ -24,18 +24,13 @@ class HomeViewModel {
     
     //MARK - Lifecycle
     
-    init(userService: UserService = UserService(), wordsService: WordsService = WordsService(), user: User) {
+    init(userService: UserServicing = UserService(), wordsService: WordsServicing = WordsService(), user: User) {
         self.userService = userService
         self.wordsService = wordsService
         self.user = user
     }
     
     //MARK: - Helpers
-    
-    //    func didTapSearchButton(withWord word: String) {
-    //        print("DEBUG: Searched word is \(word)")
-    //        coordinator?.goToWord()
-    //    }
     
     func searchWords(letterPattern: String) async {
         if letterPattern.isEmpty {
