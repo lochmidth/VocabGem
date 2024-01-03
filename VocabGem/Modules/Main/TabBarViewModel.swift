@@ -13,19 +13,21 @@ class TabBarViewModel {
     
     weak var coordinator: TabBarCoordinating?
     let userService: UserServicing
+    let auth: Auth
     
     //MARK: - Lifecycle
     
-    init(userService: UserServicing = UserService()) {
+    init(userService: UserServicing = UserService(), auth: Auth = Auth.auth()) {
         self.userService = userService
+        self.auth = auth
     }
     
     //MARK: - Helpers
     
     func handleSignOut() async {
         do {
-            try Auth.auth().signOut()
-            await coordinator?.signOut()
+            try auth.signOut()
+            try await coordinator?.signOut()
         } catch {
             await coordinator?.showMessage(withTitle: "Oops!", message: "Error While signing the user out, \(error.localizedDescription)")
         }

@@ -18,6 +18,10 @@ protocol UserServicing {
     func fetchUser() async throws -> User
 }
 
+protocol AuthProtocol: AnyObject {
+    func signOut() throws
+}
+
 class UserService: UserServicing {
     
     let auth: Auth

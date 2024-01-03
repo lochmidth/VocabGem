@@ -27,6 +27,11 @@ let mockWords: Words = {
     return Words(results: mockResults)
 }()
 
+var mockEmptyWords: Words = {
+    let mockResults = Results(total: 0, data: [])
+    return Words(results: mockResults)
+}()
+
 //MARK: - Word
 
 let mockWord: Word = {

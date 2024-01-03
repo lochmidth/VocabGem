@@ -23,6 +23,9 @@
 		C23115622B45AF8E0015CFC5 /* MockAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115612B45AF8E0015CFC5 /* MockAuthCoordinator.swift */; };
 		C23115642B45B07D0015CFC5 /* MockTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115632B45B07D0015CFC5 /* MockTabBarCoordinator.swift */; };
 		C23115682B45C5020015CFC5 /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115672B45C5020015CFC5 /* RegisterViewModelTests.swift */; };
+		C231156D2B45C84E0015CFC5 /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */; };
+		C231156F2B45C9360015CFC5 /* MockAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231156E2B45C9360015CFC5 /* MockAuth.swift */; };
+		C23115732B45DD9F0015CFC5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */; };
 		C23654242B448536008A742D /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C23654232B448536008A742D /* JGProgressHUD */; };
 		C248FAE42B3C66A100AD7244 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE32B3C66A100AD7244 /* Constants.swift */; };
 		C248FAEA2B3DD75D00AD7244 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FAE92B3DD75D00AD7244 /* User.swift */; };
@@ -102,6 +105,9 @@
 		C23115612B45AF8E0015CFC5 /* MockAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthCoordinator.swift; sourceTree = "<group>"; };
 		C23115632B45B07D0015CFC5 /* MockTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarCoordinator.swift; sourceTree = "<group>"; };
 		C23115672B45C5020015CFC5 /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
+		C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
+		C231156E2B45C9360015CFC5 /* MockAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuth.swift; sourceTree = "<group>"; };
+		C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		C248FAE32B3C66A100AD7244 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C248FAE92B3DD75D00AD7244 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C248FAEB2B3DD80D00AD7244 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				C23115492B457A7A0015CFC5 /* MockWordsService.swift */,
 				C231154B2B457D990015CFC5 /* MockGoogleService.swift */,
 				C231154D2B457E590015CFC5 /* MockQuizManager.swift */,
+				C231156E2B45C9360015CFC5 /* MockAuth.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 		C23115572B45A45F0015CFC5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C23115722B45DD9F0015CFC5 /* HomeViewModelTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 		C23115582B45A46D0015CFC5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C231156C2B45C84E0015CFC5 /* TabBarViewModelTests.swift */,
 				C23115572B45A45F0015CFC5 /* Home */,
 				C23115562B45A45B0015CFC5 /* Quiz */,
 				C23115552B45A4520015CFC5 /* Word */,
@@ -690,11 +699,14 @@
 				C23115442B44D9CC0015CFC5 /* MockUserService.swift in Sources */,
 				C23115642B45B07D0015CFC5 /* MockTabBarCoordinator.swift in Sources */,
 				C23115462B4576B20015CFC5 /* MockAuthService.swift in Sources */,
+				C231156D2B45C84E0015CFC5 /* TabBarViewModelTests.swift in Sources */,
 				C23115682B45C5020015CFC5 /* RegisterViewModelTests.swift in Sources */,
+				C23115732B45DD9F0015CFC5 /* HomeViewModelTests.swift in Sources */,
 				C231154C2B457D990015CFC5 /* MockGoogleService.swift in Sources */,
 				C231155D2B45A4A30015CFC5 /* LoginViewModelTests.swift in Sources */,
 				C2261CCC2B44CFD2003EADCF /* Models.swift in Sources */,
 				C23115482B457A100015CFC5 /* MockNetworkManager.swift in Sources */,
+				C231156F2B45C9360015CFC5 /* MockAuth.swift in Sources */,
 				C23115622B45AF8E0015CFC5 /* MockAuthCoordinator.swift in Sources */,
 				C231154E2B457E590015CFC5 /* MockQuizManager.swift in Sources */,
 				C231154A2B457A7A0015CFC5 /* MockWordsService.swift in Sources */,

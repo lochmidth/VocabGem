@@ -8,7 +8,7 @@
 import UIKit
 @testable import VocabGem
 
-class MockTabBarController: TabBarCoordinating {
+class MockTabBarCoordinator: TabBarCoordinating {
     
     var navigationController = UINavigationController()
     
@@ -23,8 +23,15 @@ class MockTabBarController: TabBarCoordinating {
     }
     
     var isSignOutCalled = false
-    func signOut() {
+    var signOutShouldFail = false
+    
+    func signOut() async throws {
         isSignOutCalled = true
+        
+        if signOutShouldFail {
+            throw MockError.someError
+        }
+       
     }
 
     var isStartCalled = false
