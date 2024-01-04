@@ -19,7 +19,7 @@ class HomeController: UIViewController {
     
     private let appLabel: UILabel = {
         let label = UILabel()
-        label.text = "VocabGem"
+        label.text = Constant.appLabelText
         label.font = UIFont.boldSystemFont(ofSize: 48)
         return label
     }()
@@ -32,7 +32,7 @@ class HomeController: UIViewController {
     
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Search for words"
+        searchBar.placeholder = Constant.searchBarText
         searchBar.barStyle = .default
         searchBar.sizeToFit()
         return searchBar
@@ -48,7 +48,7 @@ class HomeController: UIViewController {
     
     private lazy var clearRecentsButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("🗑️ Clear recent words", for: .normal)
+        button.setTitle(Constant.clearRecentsButtonText, for: .normal)
         button.setTitleColor(.red, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         
@@ -197,5 +197,14 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
             showLoader(false)
         }
     }
-    
+}
+
+//MARK: - Constants
+
+extension HomeController {
+    struct Constant {
+        static let appLabelText = "VocabGem"
+        static let searchBarText = "Search for words"
+        static let clearRecentsButtonText = "🗑️ Clear recent words"
+    }
 }

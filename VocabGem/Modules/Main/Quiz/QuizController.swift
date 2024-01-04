@@ -141,3 +141,4 @@ class QuizController: UIViewController {
         answer3Button.setTitle(viewModel.quizManager.questions[index].choices[2], for: .normal)
     }
 }
+
