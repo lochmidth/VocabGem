@@ -76,6 +76,7 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        setupTapGestureforKeyboardDismissal()
     }
     
     deinit {
@@ -90,7 +91,7 @@ class RegisterController: UIViewController {
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
         guard let username = usernameTextField.text?.lowercased() else { return }
-        Task {
+        Task { @MainActor in
             await viewModel.register(withCredentials: AuthCredentials(email: email, password: password, fullname: fullname, username: username))
             showLoader(false)
         }
@@ -98,7 +99,7 @@ class RegisterController: UIViewController {
     
     @objc func handleShowLogin() {
         showLoader(true)
-        Task {
+        Task { @MainActor in
             await viewModel.dismissViewController()
             showLoader(false)
         }

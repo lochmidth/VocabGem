@@ -24,76 +24,35 @@ extension UIColor {
 
 extension UIViewController {
     
-    static let hud = JGProgressHUD(style: .dark)
+    static let hud: JGProgressHUD = {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Loading"
+        return hud
+    }()
     
+    @MainActor
     func showLoader(_ show: Bool) {
-        DispatchQueue.main.async {
-            self.showLoader(false)
-        }
         if show {
             UIViewController.hud.show(in: view)
         } else {
             UIViewController.hud.dismiss()
         }
     }
+    
+    func setupTapGestureforKeyboardDismissal() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tapGesture.cancelsTouchesInView = false
+            view.addGestureRecognizer(tapGesture)
+        }
+    
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
+    
 }
 
-//extension URL {
-//    var queryParameters: [String: String]? {
-//        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
-//              let queryItems = components.queryItems else {
-//            return nil
-//        }
-//
-//        var parameters = [String: String]()
-//        for item in queryItems {
-//            parameters[item.name] = item.value
-//        }
-//
-//        return parameters
-//    }
-//}
 
 extension UIView {
-    
-//    func inputContainerView(image: UIImage?, textField: UITextField? = nil, segmentedControl: UISegmentedControl? = nil ) -> UIView {
-//        let view = UIView()
-//        
-//        let imageView = UIImageView()
-//        imageView.image = image
-//        imageView.alpha = 0.87
-//        view.addSubview(imageView)
-//        
-//        if let textField {
-//            imageView.centerY(inView: view)
-//            imageView.anchor(left: view.leftAnchor, paddingLeft: 18, width: 24, height: 24)
-//            
-//            view.addSubview(textField)
-//            textField.centerY(inView: view)
-//            textField.anchor(left: imageView.rightAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
-//            
-//            view.setHeight(50)
-//        }
-//        
-//        if let segmentedControl {
-//            imageView.anchor(top: view.topAnchor, left: view.leftAnchor,
-//                             paddingTop: -8 ,paddingLeft: 18, width: 24, height: 24)
-//            view.addSubview(segmentedControl)
-//            segmentedControl.anchor(left: view.leftAnchor, right: view.rightAnchor,
-//                                    paddingLeft: 8, paddingRight: 8)
-//            segmentedControl.centerY(inView: view, constant: 8)
-//            
-//            view.setHeight(80)
-//        }
-//        
-//        let separatorView = UIView()
-//        separatorView.backgroundColor = .lightGray
-//        view.addSubview(separatorView)
-//        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,
-//                             paddingLeft: 10, paddingRight: 10, height: 0.75)
-//        
-//        return view
-//    }
     
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,
@@ -190,17 +149,4 @@ extension UIView {
                bottom: view.bottomAnchor, right: view.rightAnchor)
     }
 }
-//
-//extension UITableViewCell {
-//    var selectionColor: UIColor {
-//        set {
-//            let view = UIView()
-//            view.backgroundColor = newValue
-//            self.selectedBackgroundView = view
-//        }
-//        get {
-//            return self.selectedBackgroundView?.backgroundColor ?? UIColor.clear
-//        }
-//    }
-//}
 

@@ -92,6 +92,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        setupTapGestureforKeyboardDismissal()
     }
     
     deinit {
@@ -102,7 +103,7 @@ class LoginController: UIViewController {
     
     @objc func handleShowRegister() {
         showLoader(true)
-        Task {
+        Task { @MainActor in
             await viewModel.handleShowRegister()
             showLoader(false)
         }
@@ -112,7 +113,7 @@ class LoginController: UIViewController {
         showLoader(true)
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        Task {
+        Task { @MainActor in
             await viewModel.handleLogin(email: email, password: password)
             showLoader(false)
         }
@@ -120,7 +121,7 @@ class LoginController: UIViewController {
     
     @objc func handleLoginWithGoogle() {
         showLoader(true)
-        Task {
+        Task { @MainActor in
             await viewModel.handleLoginWithGoogle()
             showLoader(false)
         }

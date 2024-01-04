@@ -50,9 +50,4 @@ class AuthCoordinator: AuthCoordinating {
     func dismiss() {
         navigationController.popViewController(animated: true)
     }
-    
-    
-//    func showMessage(withTitle title: String, message: String) {
-//        parentCoordinator?.showMessage(withTitle: title, message: message)
-//    }
 }

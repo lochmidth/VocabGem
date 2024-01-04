@@ -66,11 +66,12 @@ class HomeController: UIViewController {
         configureUI()
         configureTableView()
         configureSearchBar()
+        setupTapGestureforKeyboardDismissal()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Task {
+        Task { @MainActor in
             await viewModel.fetchRecentWords()
             configureClearButton()
             tableView.reloadData()
@@ -94,7 +95,7 @@ class HomeController: UIViewController {
     
     @objc func didTapClearRecentWords() {
         showLoader(true)
-        Task {
+        Task { @MainActor in
             await viewModel.clearRecentWords()
             tableView.reloadData()
             configureClearButton()
@@ -154,7 +155,7 @@ extension HomeController: UISearchBarDelegate {
         searchTimer?.invalidate()
         
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { [weak self] _ in
-            Task {
+            Task { @MainActor in
                 await self?.viewModel.searchWords(letterPattern: searchText)
                 self?.tableView.reloadData()
             }
@@ -191,7 +192,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showLoader(true)
-        Task {
+        Task { @MainActor in
             await viewModel.didSelectRowAt(index: indexPath.item)
             showLoader(false)
         }

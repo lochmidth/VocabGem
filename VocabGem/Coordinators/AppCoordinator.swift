@@ -68,8 +68,4 @@ class AppCoordinator: Coordinator {
             }
         }
     }
-    
-//    func showMessage(withTitle title: String, message: String) {
-//        navigationController.showMessage(withTitle: title, message: message)
-//    }
 }
