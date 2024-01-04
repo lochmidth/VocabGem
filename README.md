@@ -45,7 +45,7 @@ VocabGem is an English vocabulary app that elevates your English vocabulary with
 
 ![Architecture](https://miro.medium.com/v2/resize:fit:566/1*VS4lOMnFpqEAOwTdDsk4mg.jpeg)
 
-In developing GitInsider, I used the MVVM-C (Model-View-ViewModel-Coordinator) design pattern for these key reasons:
+I used the MVVM-C (Model-View-ViewModel-Coordinator) design pattern for these key reasons:
 
 - **Clear Separation:** MVVM-C ensures a distinct separation of concerns, simplifying development with isolated layers for UI logic (ViewModel), business logic (Model), and navigation flow (Coordinator).
 - **Test-Driven Development:** The pattern's modularity facilitates effective unit testing, enabling me to write comprehensive tests for each layer and ensure the app's stability.
