@@ -108,7 +108,7 @@ Also, make sure that these dependencies are added in your project's target:
 
 ### Search Words
 
-1. Use the search bar to find English words.
+1. Use the search bar to search English words.
 2. Tap on the word you want and find Details about it. This word also will be added to "Recents" for easy access in the next usage.
 
 ---
