@@ -20,7 +20,6 @@ VocabGem is an English vocabulary app that elevates your English vocabulary with
   - [Quiz](#quiz)
 - [Known Issues](#known-issues)
 - [Improvements](#improvements)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -129,11 +128,6 @@ Also, make sure that these dependencies are added in your project's target:
 - A more pleasent and comfortable UI can be designed. I kept it simple due to short amount of time.
 - Localization for other languages can be added to be able to reach more user.
 - There is only 10 quiz questions in the database and app loops the same questions after finishing it. However, more questions can be easily added to the database anytime.
-
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropiate.
 
 ## License
 
