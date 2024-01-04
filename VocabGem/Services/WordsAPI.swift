@@ -51,8 +51,8 @@ extension WordsAPI: TargetType {
     
     var headers: [String : String]? {
         return [
-            "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
-            "X-RapidAPI-Key": "0a88629ce4msh03be90628e82e14p1b0eb1jsnc40fc356a6a3"
+            "X-RapidAPI-Host": wordsAPIHost,
+            "X-RapidAPI-Key": wordsAPIKey
         ]
     }
     

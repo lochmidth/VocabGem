@@ -75,7 +75,7 @@ class SplashController: UIViewController {
             self.stack.alpha = 1
         } completion: { [weak self] _ in
             self?.showLoader(true)
-            Task {
+            Task { @MainActor in
                 await self?.viewModel.checkForAuth()
                 self?.showLoader(false)
             }

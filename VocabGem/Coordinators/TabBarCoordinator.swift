@@ -65,10 +65,4 @@ class TabBarCoordinator: TabBarCoordinating {
             parentCoordinator?.childDidFinish(self)
         }
     }
-    
-    
-//    func showMessage(withTitle title: String, message: String) {
-//        parentCoordinator?.showMessage(withTitle: title, message: message)
-//    }
-    
 }

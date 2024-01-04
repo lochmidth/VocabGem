@@ -95,7 +95,7 @@
 
 /* Begin PBXFileReference section */
 		C2261CCB2B44CFD2003EADCF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		C231153F2B44D7DB0015CFC5 /* VocabGemTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabGemTests.xctestplan; sourceTree = SOURCE_ROOT; };
+		C231153F2B44D7DB0015CFC5 /* VocabGemTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VocabGemTests.xctestplan; sourceTree = SOURCE_ROOT; };
 		C23115432B44D9CC0015CFC5 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
 		C23115452B4576B20015CFC5 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
 		C23115472B457A100015CFC5 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
@@ -886,6 +886,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -916,6 +917,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
