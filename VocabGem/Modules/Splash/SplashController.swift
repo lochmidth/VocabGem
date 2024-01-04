@@ -17,13 +17,13 @@ class SplashController: UIViewController {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.setDimensions(height: 150, width: 150)
-        iv.image = UIImage(named: "VocabGem")
+        iv.image = UIImage(named: Constant.VocabGemLogo)
         return iv
     }()
     
     private let logoLabel: UILabel = {
         let label = UILabel()
-        label.text = "VocabGem"
+        label.text = Constant.logoText
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 30)
         return label
@@ -80,5 +80,14 @@ class SplashController: UIViewController {
                 self?.showLoader(false)
             }
         }
+    }
+}
+
+//MARK: - Constants
+
+extension SplashController {
+    struct Constant {
+        static let VocabGemLogo = "VocebGem"
+        static let logoText = "VocabGem"
     }
 }

@@ -52,7 +52,7 @@ class WordController: UIViewController {
     
     private lazy var textToSpeechButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "speaker.wave.2.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.setImage(UIImage(systemName: Constant.textToSpeechImage)?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setDimensions(height: 50, width: 50)
         
         button.addTarget(self, action: #selector(didTapTextToSpeech), for: .touchUpInside)
@@ -123,5 +123,13 @@ class WordController: UIViewController {
         definitionLabel.text = viewModel.definitionText
         exampleLabel.text = viewModel.exampleText
         synonymsLabel.text = viewModel.synonymsText
+    }
+}
+
+//MARK: - Constants
+
+extension WordController {
+    struct Constant {
+        static let textToSpeechImage = "speaker.wave.2.fill"
     }
 }

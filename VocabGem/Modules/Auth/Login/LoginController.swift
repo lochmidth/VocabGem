@@ -18,7 +18,7 @@ class LoginController: UIViewController {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.setDimensions(height: 150, width: 150)
-        iv.image = UIImage(named: "VocabGem")
+        iv.image = UIImage(named: Constant.vocabGemLogo)
         return iv
     }()
     
@@ -27,20 +27,20 @@ class LoginController: UIViewController {
     private lazy var passwordContainerText = Utilities().inputContainerView(withImage: UIImage(named: "lock"), textField: passwordTextField)
     
     private let emailTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: "Email")
+        let tf = Utilities().textField(withPlaceholder: Constant.emailText)
         tf.keyboardType = .emailAddress
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: "Password")
+        let tf = Utilities().textField(withPlaceholder: Constant.passwordText)
         tf.isSecureTextEntry = true
         return tf
     }()
     
     private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign in", for: .normal)
+        button.setTitle(Constant.loginButtonText, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.backgroundColor = .mutedTaupe
@@ -51,23 +51,10 @@ class LoginController: UIViewController {
     }()
     
     private lazy var dontHaveAccountButton: UIButton = {
-        let button = Utilities().attributedButton("Don't have an account?", "Sign Up")
+        let button = Utilities().attributedButton(Constant.dontHaveAccountButtonText, Constant.dontHaveButtonBoldText)
         button.addTarget(self, action: #selector(handleShowRegister), for: .touchUpInside)
         return button
     }()
-    
-    //    private lazy var loginWithGoogleButton: UIButton = {
-    //        let button = UIButton(type: .system)
-    //        button.setTitle("Sign in with Google", for: .normal)
-    //        button.setImage(UIImage(named: "google"), for: .normal)
-    //        button.layer.cornerRadius = 5
-    //        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-    //        button.backgroundColor = .mutedTaupe
-    //        button.setTitleColor(.black, for: .normal)
-    //        button.setDimensions(height: 50, width: 150)
-    //        button.addTarget(self, action: #selector(handleLoginWithGoogle), for: .touchUpInside)
-    //        return button
-    //    }()
     
     private lazy var loginWithGoogleButton: GIDSignInButton = {
         let button = GIDSignInButton()
@@ -159,5 +146,18 @@ class LoginController: UIViewController {
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
                                      paddingLeft: 40, paddingRight: 40)
         
+    }
+}
+
+//MARK: - Constants
+
+extension LoginController {
+    struct Constant {
+        static let vocabGemLogo = "VocabGem"
+        static let emailText = "Email"
+        static let passwordText = "Password"
+        static let loginButtonText = "Sign In"
+        static let dontHaveAccountButtonText = "Don't have an account?"
+        static let dontHaveButtonBoldText = "Sign Up"
     }
 }

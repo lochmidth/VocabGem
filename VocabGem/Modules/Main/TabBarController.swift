@@ -37,15 +37,15 @@ class TabBarController: UITabBarController {
     //MARK: - Actions
     
     @objc func handleSignOut() {
-        let alert = UIAlertController(title: nil, message: "Are you sure you want to sign out?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { [weak self] _ in
+        let alert = UIAlertController(title: nil, message: Constant.signOutText, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: Constant.signOutButtonText, style: .destructive, handler: { [weak self] _ in
             Task { @MainActor in
                 self?.showLoader(true)
                 await self?.viewModel.handleSignOut()
                 self?.showLoader(false)
             }
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: Constant.cancelButtonText, style: .cancel))
         self.present(alert, animated: true)
     }
     
@@ -71,7 +71,18 @@ class TabBarController: UITabBarController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.setHidesBackButton(true, animated: false)
         
-        let signOutIcon = UIImage(systemName: "rectangle.portrait.and.arrow.right")?.withTintColor(.red, renderingMode: .alwaysOriginal)
+        let signOutIcon = UIImage(systemName: Constant.signOutIconImage)?.withTintColor(.red, renderingMode: .alwaysOriginal)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: signOutIcon, style: .done, target: self, action: #selector(handleSignOut))
+    }
+}
+
+//MARK: - Constants
+
+extension TabBarController {
+    struct Constant {
+        static let signOutText = "Are you sure you want to sign out?"
+        static let signOutButtonText = "Sign Out"
+        static let cancelButtonText = "Cancel"
+        static let signOutIconImage = "rectangle.portrait.and.arrow.right"
     }
 }

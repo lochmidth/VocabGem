@@ -12,40 +12,44 @@ class RegisterController: UIViewController {
     
     var viewModel: RegisterViewModel
     
-    private lazy var emailContainerText = Utilities().inputContainerView(withImage: UIImage(named: "mail"), textField: emailTextField)
+    private lazy var emailContainerText = Utilities().inputContainerView(withImage: UIImage(named: Constant.emailContainerImage),
+                                                                         textField: emailTextField)
     
-    private lazy var passwordContainerText = Utilities().inputContainerView(withImage: UIImage(named: "lock"), textField: passwordTextField)
+    private lazy var passwordContainerText = Utilities().inputContainerView(withImage: UIImage(named: Constant.passwordContainerImage),
+                                                                            textField: passwordTextField)
     
-    private lazy var fullnameContainerText = Utilities().inputContainerView(withImage: UIImage(named: "person"), textField: fullnameTextField)
+    private lazy var fullnameContainerText = Utilities().inputContainerView(withImage: UIImage(named: Constant.nameContainerImage),
+                                                                            textField: fullnameTextField)
     
-    private lazy var usernameContainerText = Utilities().inputContainerView(withImage: UIImage(named: "person"), textField: usernameTextField)
+    private lazy var usernameContainerText = Utilities().inputContainerView(withImage: UIImage(named: Constant.nameContainerImage),
+                                                                            textField: usernameTextField)
     
     private let emailTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: "Email")
+        let tf = Utilities().textField(withPlaceholder: Constant.emailText)
         tf.keyboardType = .emailAddress
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: "Password")
+        let tf = Utilities().textField(withPlaceholder: Constant.passwordText)
         tf.isSecureTextEntry = true
         return tf
     }()
     
     private let fullnameTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: "Full Name")
+        let tf = Utilities().textField(withPlaceholder: Constant.fullnameText)
         tf.keyboardType = .emailAddress
         return tf
     }()
     
     private let usernameTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: "Username")
+        let tf = Utilities().textField(withPlaceholder: Constant.usernameText)
         return tf
     }()
     
     private lazy var registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Register", for: .normal)
+        button.setTitle(Constant.registerButtonText, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.backgroundColor = .mutedTaupe
@@ -56,7 +60,8 @@ class RegisterController: UIViewController {
     }()
     
     private lazy var alreadyHaveAccountButton: UIButton = {
-        let button = Utilities().attributedButton("Already have an account?", "Log in")
+        let button = Utilities().attributedButton(Constant.alreadyHaveAccountButtonText,
+                                                  Constant.alreadyHaveAccountButtonBoldText)
         button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
     }()
@@ -122,5 +127,22 @@ class RegisterController: UIViewController {
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
                                         paddingLeft: 40, paddingRight: 40)
+    }
+}
+
+//MARK: - Constants
+
+extension RegisterController {
+    struct Constant {
+        static let emailContainerImage = "mail"
+        static let passwordContainerImage = "lock"
+        static let nameContainerImage = "person"
+        static let emailText = "Email"
+        static let passwordText = "Password"
+        static let fullnameText = "Full name"
+        static let usernameText = "Username"
+        static let registerButtonText = "Register"
+        static let alreadyHaveAccountButtonText = "Already have an account?"
+        static let alreadyHaveAccountButtonBoldText = "Log in"
     }
 }
