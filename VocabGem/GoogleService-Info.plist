@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>841000023651-fn2bhlh616dier1sdmv7g3r9g0nahj1u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.841000023651-fn2bhlh616dier1sdmv7g3r9g0nahj1u</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAw9JrC3s24eqaweJpg5mJJ1fQeg4ko30Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>841000023651</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alphanogn.VocabGem</string>
+	<key>PROJECT_ID</key>
+	<string>vocabgem</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vocabgem.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:841000023651:ios:ca079b0351419c3426ea56</string>
+	<key>DATABASE_URL</key>
+	<string>https://vocabgem-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
