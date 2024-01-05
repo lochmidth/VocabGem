@@ -87,7 +87,7 @@ class SplashController: UIViewController {
 
 extension SplashController {
     struct Constant {
-        static let VocabGemLogo = "VocebGem"
+        static let VocabGemLogo = "VocabGem"
         static let logoText = "VocabGem"
     }
 }
