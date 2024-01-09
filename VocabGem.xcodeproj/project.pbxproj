@@ -54,6 +54,9 @@
 		C248FB282B40E1F400AD7244 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB272B40E1F400AD7244 /* Quiz.swift */; };
 		C248FB2A2B43094300AD7244 /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248FB292B43094300AD7244 /* QuizManager.swift */; };
 		C258B6162B48172000F86791 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C258B6152B48172000F86791 /* GoogleService-Info.plist */; };
+		C2636DCC2B4D7E970049E51A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C2636DCB2B4D7E970049E51A /* FirebaseStorage */; };
+		C2636DCE2B4D7EA20049E51A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C2636DCD2B4D7EA20049E51A /* Moya */; };
+		C2636DD02B4D7EAF0049E51A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C2636DCF2B4D7EAF0049E51A /* FirebaseFirestore */; };
 		C26554592B3C3A6D003B083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26554582B3C3A6D003B083B /* AppDelegate.swift */; };
 		C265545B2B3C3A6D003B083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265545A2B3C3A6D003B083B /* SceneDelegate.swift */; };
 		C26554632B3C3A6D003B083B /* VocabGem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26554612B3C3A6D003B083B /* VocabGem.xcdatamodeld */; };
@@ -178,8 +181,11 @@
 			files = (
 				C2261CC62B44CECF003EADCF /* JGProgressHUD in Frameworks */,
 				C2261CC22B44CEC7003EADCF /* FirebaseDatabase in Frameworks */,
+				C2636DCE2B4D7EA20049E51A /* Moya in Frameworks */,
 				C2261CC02B44CEC2003EADCF /* FirebaseAuth in Frameworks */,
+				C2636DCC2B4D7E970049E51A /* FirebaseStorage in Frameworks */,
 				C2261CC42B44CECB003EADCF /* GoogleSignIn in Frameworks */,
+				C2636DD02B4D7EAF0049E51A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +562,9 @@
 				C2261CC12B44CEC7003EADCF /* FirebaseDatabase */,
 				C2261CC32B44CECB003EADCF /* GoogleSignIn */,
 				C2261CC52B44CECF003EADCF /* JGProgressHUD */,
+				C2636DCB2B4D7E970049E51A /* FirebaseStorage */,
+				C2636DCD2B4D7EA20049E51A /* Moya */,
+				C2636DCF2B4D7EAF0049E51A /* FirebaseFirestore */,
 			);
 			productName = VocabGemTests;
 			productReference = C265546E2B3C3A6F003B083B /* VocabGemTests.xctest */;
@@ -1126,6 +1135,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C248FB1F2B40C57B00AD7244 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		C2636DCB2B4D7E970049E51A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		C2636DCD2B4D7EA20049E51A /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C248FB0E2B3F649600AD7244 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		C2636DCF2B4D7EAF0049E51A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26554A62B3C493F003B083B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		C26554A72B3C493F003B083B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
