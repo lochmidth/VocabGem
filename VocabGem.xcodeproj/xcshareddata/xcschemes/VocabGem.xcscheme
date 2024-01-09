@@ -20,6 +20,20 @@
                ReferencedContainer = "container:VocabGem.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C26554772B3C3A6F003B083B"
+               BuildableName = "VocabGemUITests.xctest"
+               BlueprintName = "VocabGemUITests"
+               ReferencedContainer = "container:VocabGem.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,17 +56,6 @@
                BlueprintIdentifier = "C265546D2B3C3A6F003B083B"
                BuildableName = "VocabGemTests.xctest"
                BlueprintName = "VocabGemTests"
-               ReferencedContainer = "container:VocabGem.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C26554772B3C3A6F003B083B"
-               BuildableName = "VocabGemUITests.xctest"
-               BlueprintName = "VocabGemUITests"
                ReferencedContainer = "container:VocabGem.xcodeproj">
             </BuildableReference>
          </TestableReference>
